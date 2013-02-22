@@ -2,13 +2,12 @@
 #define STRING_H_INCLUDED
 
 #include "boolean.h"
-#include "arreglo_string.h"
 
 // String dinámico
 
 const int MAX = 80;
 
-typedef char * string;
+typedef char *string;
 
 // Metodos
 
@@ -32,8 +31,5 @@ int largo_string(string s);
 
 // comparar dos strings si son iguales
 boolean comparar_2_strings(string s1,string s2);
-
-// dado un string, lo divide en un arreglo de strings por cada espacio en blanco
-void separar_por_espacio(string str, arreglo_string &parametros);
 
 #endif // STRING_H_INCLUDED

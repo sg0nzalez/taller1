@@ -23,3 +23,27 @@
 
 1361506316 source:/home/santi/workspace/taller1/test_string.cpp
 
+1361565626 source:/Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.cpp
+	"arreglo_string.h"
+
+1361567477 /Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.h
+	"string.h"
+
+1361567457 /Users/sandant/Documents/Projects/CProjects/taller1/string.h
+	"boolean.h"
+
+1361565626 /Users/sandant/Documents/Projects/CProjects/taller1/boolean.h
+	<stdio.h>
+
+1361565626 source:/Users/sandant/Documents/Projects/CProjects/taller1/boolean.cpp
+	"boolean.h"
+
+1361566535 source:/Users/sandant/Documents/Projects/CProjects/taller1/main.cpp
+	"string.h"
+
+1361567153 source:/Users/sandant/Documents/Projects/CProjects/taller1/string.cpp
+	"string.h"
+	"arreglo_string.h"
+
+1361567419 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_string.cpp
+

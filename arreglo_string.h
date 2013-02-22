@@ -3,11 +3,24 @@
 
 #include "string.h"
 
-typedef string arre[MAX];
+// Es la cantidad maxima de parametros que puede enviar un usuario
+// al ejecutar un comando.
+//
+// Ejemplo:
+//
+// crearproducto 111111 222222
+//       0          1      2
+//
+// el ejemplo anterior tiene 3 parametros
+const int CANTIDAD_MAX_PARAMS = 5;
 
 typedef struct {
-        arre arreglo;
-        int tope;
-    } arreglo_string;
+    string arre[CANTIDAD_MAX_PARAMS];
+    int tope;
+} arreglo_string;
+
+
+// dado un string, lo divide en un arreglo de strings por cada espacio en blanco
+void separar_por_espacio(string str, arreglo_string &parametros);
 
 #endif // ARREGLO_STRING_H_INCLUDED
