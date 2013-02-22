@@ -2,25 +2,38 @@
 #define STRING_H_INCLUDED
 
 #include "boolean.h"
+#include "arreglo_string.h"
 
-// String
+// String dinámico
 
-const int LARGO_STRING = 80;
+const int MAX = 80;
 
-typedef char string[LARGO_STRING];
+typedef char * string;
 
 // Metodos
 
-//Carga string
+// crea el string dado
+void crear_string (string &texto);
+
+// elimina los caracteres  cargados en el string dado
+void destruir_string(string &texto);
+
+// carga el string dado
 void cargar_string(string &texto);
 
-//Muestra en pantalla el string
+// muestra en pantalla el string
 void desplegar_string(string texto);
 
-//Copia un string en otro
-void copiar_string(string texto, string &texto2);
+// copia el segundo string en el primero
+void copiar_string(string &s1, string s2);
 
-//Comparar dos strings si son iguales
+// devuelve el largo del string dado
+int largo_string(string s);
+
+// comparar dos strings si son iguales
 boolean comparar_2_strings(string s1,string s2);
+
+// dado un string, lo divide en un arreglo de strings por cada espacio en blanco
+void separar_por_espacio(string str, arreglo_string &parametros);
 
 #endif // STRING_H_INCLUDED

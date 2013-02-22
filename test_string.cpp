@@ -1,7 +1,3 @@
-#include "string.h"
-
-int main(){
-
     string s1;
     crear_string(s1);
     string s2;
@@ -39,9 +35,3 @@ int main(){
 
     destruir_string(s1);
     destruir_string(s2);
-
-// dado un string, lo divide en un arreglo de strings por cada espacio en blanco
-//void separar_por_espacio(string str, arreglo_string &parametros);
-
-
-}

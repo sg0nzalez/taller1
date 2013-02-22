@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1361418294 source:/home/santi/workspace/taller1/arreglo_string.cpp
+	"arreglo_string.h"
+
+1361505878 /home/santi/workspace/taller1/arreglo_string.h
+	"string.h"
+
+1361506780 /home/santi/workspace/taller1/string.h
+	"boolean.h"
+	"arreglo_string.h"
+
+1354230810 /home/santi/workspace/taller1/boolean.h
+	<stdio.h>
+
+1348843534 source:/home/santi/workspace/taller1/boolean.cpp
+	"boolean.h"
+
+1361506274 source:/home/santi/workspace/taller1/main.cpp
+	"string.h"
+
+1361506025 source:/home/santi/workspace/taller1/string.cpp
+	"string.h"
+
+1361506316 source:/home/santi/workspace/taller1/test_string.cpp
+
