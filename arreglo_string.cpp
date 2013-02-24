@@ -1,5 +1,45 @@
 #include "arreglo_string.h"
 
-void separar_por_espacio(string str, arreglo_string &parametros) {
+void separar_por_espacio(string texto, arreglo_string &parametros) {
 
+    string aux = new char[MAX];
+    int i = 0;
+    int k = 0;
+
+    while ((texto[i] != '\n') && (i < MAX)) {
+        if(texto[i]==' '){
+            if(texto[i-1]!=' ' && texto[i+1]!=' ' && texto[i-1]!=NULL){
+
+                aux[k] = '\0';
+                parametros.arre[parametros.tope] = aux;
+                aux = new char[MAX];
+                k = 0;
+                parametros.tope++;
+
+            } else {
+                if(texto[i-1]!=' ' && texto[i-1] != NULL) {
+
+                    aux[k] = '\0';
+                    parametros.arre[parametros.tope] = aux;
+                    aux = new char[MAX];
+                    k = 0;
+                    parametros.tope++;
+                }
+            }
+        } else {
+            aux[k] = texto[i];
+
+            k++;
+        }
+
+        i++;
+    }
+
+    if(aux[0]!=NULL) {
+
+        aux[k] = '\0';
+        parametros.arre[parametros.tope] = aux;
+        parametros.tope++;
+    }
+    destruir_string(aux);
 }

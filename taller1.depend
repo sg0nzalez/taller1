@@ -1,13 +1,12 @@
 # depslib dependency file v1.0
-1361418294 source:/home/santi/workspace/taller1/arreglo_string.cpp
+1361684609 source:/home/santi/workspace/taller1/arreglo_string.cpp
 	"arreglo_string.h"
 
-1361505878 /home/santi/workspace/taller1/arreglo_string.h
+1361630081 /home/santi/workspace/taller1/arreglo_string.h
 	"string.h"
 
-1361506780 /home/santi/workspace/taller1/string.h
+1361686753 /home/santi/workspace/taller1/string.h
 	"boolean.h"
-	"arreglo_string.h"
 
 1354230810 /home/santi/workspace/taller1/boolean.h
 	<stdio.h>
@@ -15,13 +14,16 @@
 1348843534 source:/home/santi/workspace/taller1/boolean.cpp
 	"boolean.h"
 
-1361506274 source:/home/santi/workspace/taller1/main.cpp
-	"string.h"
+1361686860 source:/home/santi/workspace/taller1/main.cpp
+	"arreglo_string.h"
 
-1361506025 source:/home/santi/workspace/taller1/string.cpp
+1361686749 source:/home/santi/workspace/taller1/string.cpp
 	"string.h"
+	"arreglo_string.h"
 
-1361506316 source:/home/santi/workspace/taller1/test_string.cpp
+1361626613 source:/home/santi/workspace/taller1/test_string.cpp
+
+1361506316 ated upstream
 
 1361565626 source:/Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.cpp
 	"arreglo_string.h"
@@ -46,4 +48,8 @@
 	"arreglo_string.h"
 
 1361567419 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_string.cpp
+
+1361567419 shed changes
+
+1361630343 source:/home/santi/workspace/taller1/test_boolean.cpp
 

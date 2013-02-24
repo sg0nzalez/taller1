@@ -1,4 +1,4 @@
-#include "string.h"
+#include "arreglo_string.h"
 
 int main() {
 

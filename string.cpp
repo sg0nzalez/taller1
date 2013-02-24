@@ -2,16 +2,19 @@
 #include "arreglo_string.h"
 
 void crear_string(string &s) {
+
     s = new char[1];
     s[0] = '\0';
 }
 
 void destruir_string(string &s) {
+
     delete [] s;
     s = NULL;
 }
 
 void cargar_string(string &texto) {
+
     string aux = new char[MAX];
     int i = 0;
     char c;
@@ -31,6 +34,7 @@ void cargar_string(string &texto) {
 }
 
 void desplegar_string(string texto) {
+
     int i = 0;
 
     while(texto[i] != '\0') {
@@ -41,6 +45,7 @@ void desplegar_string(string texto) {
 }
 
 void copiar_string(string &s1, string s2) {
+
     int i = 0;
     int largo = largo_string(s2) + 1;
 
@@ -56,15 +61,18 @@ void copiar_string(string &s1, string s2) {
 }
 
 int largo_string(string s) {
+
     int i = 0;
 
     while (s[i] != '\0')
+
         i++;
 
     return i;
 }
 
 boolean comparar_2_strings(string s1,string s2) {
+
     int i = 0;
     boolean iguales = TRUE;
 

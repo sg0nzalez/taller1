@@ -1,4 +1,8 @@
-/*    string s1;
+
+/*
+
+    string s1;
+
     crear_string(s1);
     string s2;
     crear_string(s2);
