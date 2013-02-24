@@ -1,5 +1,4 @@
 #include "string.h"
-#include "arreglo_string.h"
 
 void crear_string(string &s) {
 

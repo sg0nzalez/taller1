@@ -12,6 +12,7 @@
 //       0          1      2
 //
 // el ejemplo anterior tiene 3 parametros
+
 const int CANTIDAD_MAX_PARAMS = 5;
 
 typedef struct {

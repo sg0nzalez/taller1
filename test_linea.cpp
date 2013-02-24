@@ -1,8 +1,4 @@
-#include "arreglo_string.h"
-#include "linea.h"
-
-int main() {
-
+/*
     int precioNegativo = -2;
     int precioPositivo = 0;
 
@@ -78,4 +74,4 @@ int main() {
     } else {
         printf("\nEL IMPORTE TOTAL CACULADO ES INCORRECTO\n");
     }
-}
+*/
