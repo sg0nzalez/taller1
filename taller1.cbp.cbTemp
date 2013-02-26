@@ -32,29 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="abb_productos.h" />
-		<Unit filename="arreglo_string.cpp" />
-		<Unit filename="arreglo_string.h" />
-		<Unit filename="boolean.cpp" />
-		<Unit filename="boolean.h" />
-		<Unit filename="errores.cpp" />
-		<Unit filename="errores.h" />
-		<Unit filename="linea.cpp" />
-		<Unit filename="linea.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="producto.cpp" />
-		<Unit filename="producto.h" />
-		<Unit filename="string.cpp" />
-		<Unit filename="string.h" />
-		<Unit filename="test_arreglo_string.cpp" />
-		<Unit filename="test_boolean.cpp" />
-		<Unit filename="test_linea.cpp" />
-		<Unit filename="test_producto.cpp" />
-		<Unit filename="test_string.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
-			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

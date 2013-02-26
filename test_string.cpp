@@ -1,6 +1,4 @@
-
 /*
-
     string s1;
 
     crear_string(s1);
