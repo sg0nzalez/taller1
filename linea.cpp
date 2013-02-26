@@ -2,26 +2,11 @@
 #include "boolean.h"
 
 boolean validar_cantidad_productos(int cantidad) {
-
-    boolean esPositivo = FALSE;
-    if (cantidad >= 0){
-
-        esPositivo = TRUE;
-    }
-
-    return esPositivo;
+    return boolean(cantidad >= 0);
 }
 
 boolean validar_precio(int precio) {
-
-    boolean esPositivo = FALSE;
-
-    if (precio >= 0){
-
-        esPositivo = TRUE;
-    }
-
-    return esPositivo;
+    return boolean(precio >= 0);
 }
 
 // devuelve el codigo del producto asociado a la linea dada

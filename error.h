@@ -1,5 +1,5 @@
-#ifndef ERRORES_H_INCLUDED
-#define ERRORES_H_INCLUDED
+#ifndef ERROR_H_INCLUDED
+#define ERROR_H_INCLUDED
 
 typedef enum {
     COMANDO_INVALIDO,
@@ -20,6 +20,6 @@ typedef enum {
     ENTERO_INVALIDO,
     STRING_INVALIDO,
     STRING_VALIDO
-} errores;
+} error;
 
-#endif // ERRORES_H_INCLUDED
+#endif // ERROR_H_INCLUDED

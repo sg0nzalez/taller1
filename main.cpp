@@ -1,5 +1,6 @@
-#include "arreglo_string.h"
-#include "linea.h"
+#include "parser.h"
+#include "archivo.h"
+#include "lista_facturas.h"
 
 int main() {
 
@@ -78,4 +79,5 @@ int main() {
     } else {
         printf("\nEL IMPORTE TOTAL CACULADO ES INCORRECTO\n");
     }
+
 }

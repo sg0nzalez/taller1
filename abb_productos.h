@@ -1,10 +1,12 @@
 #ifndef ABB_PRODUCTOS_H_INCLUDED
 #define ABB_PRODUCTOS_H_INCLUDED
 
+#include "producto.h"
+
 typedef struct nodo_abb_productos {
     producto prod;
-    nodo_izquierda *nodo_abb_productos;
-    nodo_derecha *nodo_abb_productos;
+    nodo_abb_productos *nodo_izquierda;
+    nodo_abb_productos *nodo_derecha;
 } abb_productos;
 
 // crea un nuevo abb de productos
@@ -14,6 +16,7 @@ void abb_crear_producto(abb_productos &productos);
 void abb_insertar_producto(abb_productos productos, producto &prod);
 
 // precondicion: el codigo debe ser valido
+//
 // devuelve el producto con el codigo dado si existe alguno
 producto abb_buscar_producto(abb_productos productos, int codigo);
 

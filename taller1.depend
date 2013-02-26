@@ -40,9 +40,10 @@
 1361565626 source:/Users/sandant/Documents/Projects/CProjects/taller1/boolean.cpp
 	"boolean.h"
 
-1361844618 source:/Users/sandant/Documents/Projects/CProjects/taller1/main.cpp
-	"arreglo_string.h"
-	"linea.h"
+1361918902 source:/Users/sandant/Documents/Projects/CProjects/taller1/main.cpp
+	"parser.h"
+	"archivo.h"
+	"lista_facturas.h"
 
 1361787873 source:/Users/sandant/Documents/Projects/CProjects/taller1/string.cpp
 	"string.h"
@@ -70,8 +71,7 @@
 1361787873 /Users/sandant/Documents/Projects/CProjects/taller1/linea.h
 	"arreglo_string.h"
 
-1361787873 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_arreglo_string.cpp
-	"arreglo_string.h"
+1361913812 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_arreglo_string.cpp
 
 1361842539 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_boolean.cpp
 
@@ -80,8 +80,62 @@
 1361844876 /Users/sandant/Documents/Projects/CProjects/taller1/producto.h
 	"arreglo_string.h"
 
-1361844871 source:/Users/sandant/Documents/Projects/CProjects/taller1/producto.cpp
+1361918797 source:/Users/sandant/Documents/Projects/CProjects/taller1/producto.cpp
 	"producto.h"
 
-1361844639 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_producto.cpp
+1361911100 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_producto.cpp
+
+1361845570 source:/Users/sandant/Documents/Projects/CProjects/taller1/errores.cpp
+	"errores.h"
+
+1361845540 /Users/sandant/Documents/Projects/CProjects/taller1/errores.h
+
+1361912128 source:/Users/sandant/Documents/Projects/CProjects/taller1/error.cpp
+	"error.h"
+
+1361912104 /Users/sandant/Documents/Projects/CProjects/taller1/error.h
+
+1361911805 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_errores.cpp
+
+1361912392 /Users/sandant/Documents/Projects/CProjects/taller1/parser.h
+	"comando.h"
+	"error.h"
+
+1361912109 /Users/sandant/Documents/Projects/CProjects/taller1/comando.h
+	"arreglo_string.h"
+
+1361917892 source:/Users/sandant/Documents/Projects/CProjects/taller1/arreglo_lineas.cpp
+	"arreglo_lineas.h"
+
+1361918559 /Users/sandant/Documents/Projects/CProjects/taller1/arreglo_lineas.h
+	"linea.h"
+
+1361914029 source:/Users/sandant/Documents/Projects/CProjects/taller1/cliente.cpp
+	"cliente.h"
+
+1361913919 /Users/sandant/Documents/Projects/CProjects/taller1/cliente.h
+	"arreglo_string.h"
+
+1361914337 source:/Users/sandant/Documents/Projects/CProjects/taller1/factura.cpp
+	"factura.h"
+
+1361913593 /Users/sandant/Documents/Projects/CProjects/taller1/factura.h
+	"arreglo_lineas.h"
+
+1361915298 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_cliente.cpp
+
+1361914694 /Users/sandant/Documents/Projects/CProjects/taller1/archivo.h
+	"lista_facturas.h"
+	"abb_productos.h"
+	"abb_clientes.h"
+	"arreglo_lineas.h"
+
+1361917192 /Users/sandant/Documents/Projects/CProjects/taller1/lista_facturas.h
+	"factura.h"
+
+1361918482 /Users/sandant/Documents/Projects/CProjects/taller1/abb_productos.h
+	"producto.h"
+
+1361916833 /Users/sandant/Documents/Projects/CProjects/taller1/abb_clientes.h
+	"cliente.h"
 

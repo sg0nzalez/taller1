@@ -1,8 +1,4 @@
-#include "arreglo_string.h"
-
 /*
-int main() {
-
     string texto;
     crear_string(texto);
 
@@ -20,5 +16,4 @@ int main() {
         desplegar_string(params.arre[i]);
         printf("\n %d \n", i);
     }
-}
 */
