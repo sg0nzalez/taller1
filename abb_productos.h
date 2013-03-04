@@ -3,11 +3,13 @@
 
 #include "producto.h"
 
-typedef struct nodo_abb_productos {
+typedef struct nodo_producto {
     producto prod;
-    nodo_abb_productos *nodo_izquierda;
-    nodo_abb_productos *nodo_derecha;
-} abb_productos;
+    nodo_producto *nodo_izquierda;
+    nodo_producto *nodo_derecha;
+} nodo_abb_productos;
+
+typedef nodo_abb_productos *abb_productos;
 
 // crea un nuevo abb de productos
 void abb_crear_producto(abb_productos &productos);

@@ -1,83 +1,87 @@
 #include "parser.h"
 #include "archivo.h"
 #include "lista_facturas.h"
+#include "abb_clientes.h"
+#include "cliente.h"
 
 int main() {
 
-    int precioNegativo = -2;
-    int precioPositivo = 0;
+    cliente cli;
 
-    boolean esPositivo = validar_precio(precioNegativo);
+    cli.nombre = "Santiago";
+    cli.cedula = 4511851;
 
-    if(esPositivo == FALSE) {
-        printf("\nEL PRECIO INGRESADO NO ES CORRECTO. VALIDACION CORRECTA\n");
-    } else {
-        printf("\nVALIDACION DEL PRECIO INCORRECTA\n");
-    }
+    string nombre2 = "Tony";
+    long int cedula2 = 34905341;
 
-    esPositivo = validar_precio(precioPositivo);
+    string nombre_cliente;
+    obtener_nombre_cliente(cli, nombre_cliente);
 
-    if(esPositivo) {
-        printf("\nEL PRECIO INGRESADO ES CORRECTO. VALIDACION CORRECTA\n");
-    } else {
-        printf("\nVALIDACION DEL PRECIO INCORRECTA\n");
-    }
+    printf("Debe retornar el nombre del cliente dado: \n");
 
-    linea lineaPrueba;
+    if (comparar_2_strings(nombre_cliente, cli.nombre) == TRUE)
+        printf(" + PASO\n\n");
+    else
+        printf(" - FALLO\n\n");
 
-    int codigo = 10;
-    int cant_prod = 5;
-    float precio = 299;
+    printf("Debe retornar el nombre modificado del cliente dado: \n");
 
-    float linea_importe = cant_prod * precio;
-    float linea_iva = linea_importe * IVA;
-    float importe_total = linea_importe + linea_iva;
+    modificar_nombre_cliente(cli, nombre2);
 
-    lineaPrueba.codigo_producto = codigo;
-    lineaPrueba.cant_productos = cant_prod;
-    lineaPrueba.precio_unitario = precio;
+    if (comparar_2_strings(cli.nombre, nombre2) == TRUE)
+        printf(" + PASO\n\n");
+    else
+        printf(" - FALLO\n\n");
 
-    if(obtener_codigo_producto_linea(lineaPrueba)==codigo) {
-        printf("\nEL CODIGO DEL PRODUCTO OBTENIDO ES CORRECTO\n");
-    } else {
-        printf("\nEL CODIGO DEL PRODUCTO OBTENIDO ES INCORRECTO\n");
-    }
+    printf("Debe retornar la cedula del cliente dado: \n");
 
-    if(obtener_cantidad_productos_linea(lineaPrueba)==cant_prod) {
-        printf("\nLA CANTIDAD DE PRODUCTOS OBTENIDA ES LA CORRECTA\n");
-    } else {
-        printf("\nLA CANTIDAD DE PRODUCTOS OBTENIDA ES INCORRECTA\n");
-    }
+    if (obtener_cedula_cliente(cli) == cli.cedula)
+        printf(" + PASO\n\n");
+    else
+        printf(" - FALLO\n\n");
 
-    if(obtener_precio_unitario_linea(lineaPrueba)==precio) {
-        printf("\nEL PRECIO OBTENIDO ES EL CORRECTO\n");
-    } else {
-        printf("\nEL PRECIO OBTENIDO ES INCORRECTO\n");
-    }
 
-    if(importe_linea(lineaPrueba)==linea_importe) {
-        printf("\nEL IMPORTE CALCULADO ES CORRECTO\n");
-    } else {
-        printf("\nEL IMPORTE CALCULADO ES INCORRECTO\n");
-    }
+    printf("Debe retornar la cedula modificada del cliente dado: \n");
 
-    printf("\nHAY DIFERENCIAS EN LOS VALORES DESPUES DE LA COMA, POR ESO LA COMPARACION ENTRE LOS VALORES NO ES CORRECTA PERO SE PUEDE APRECIAR QUE CON SOLAMENTE DOS DIGITOS DESPUES DE LA COMA LOS RESULTADOS SON IGUALES\n");
+    modificar_cedula_cliente(cli, cedula2);
 
-    printf("\nIVA CALC = %.2f\n", iva_linea(lineaPrueba));
-    printf("\nIVA = %.2f\n", linea_iva);
+    if (obtener_cedula_cliente(cli) == cedula2)
+        printf(" + PASO\n\n");
+    else
+        printf(" - FALLO\n\n");
 
-    if(iva_linea(lineaPrueba)==linea_iva) {
-        printf("\nEL IVA CALCULADO ES CORRECTO\n");
-    } else {
-        printf("\nEL IVA CALCULADO ES INCORRECTO\n");
-    }
-    printf("\nIMPORTE CALC= %.2f\n", importe_total_linea(lineaPrueba));
-    printf("\nIMPORTE = %.2f\n", importe_total);
+/*
+abb_clientes clientes;
 
-    if(importe_total_linea(lineaPrueba)==importe_total) {
-        printf("\nEL IMPORTE TOTAL CACULADO ES CORRECTO\n");
-    } else {
-        printf("\nEL IMPORTE TOTAL CACULADO ES INCORRECTO\n");
-    }
+crear_abb_clientes(clientes);
 
+cliente cli;
+cliente cli2;
+
+cli.cedula = 34905341;
+
+printf("\nIngrese el nombre: ");
+cargar_string(cli.nombre);
+
+desplegar_string(cli.nombre);
+*/
+/*
+abb_insertar_cliente(clientes, cli);
+
+boolean esVacio = abb_cliente_es_vacio(clientes);
+
+boolean existeCliente = abb_existe_cliente(clientes, cli.cedula);
+
+if(existeCliente) {
+    printf("\nEL CLIENTE EXISTE\n");
+} else {
+    printf("\nEL CLIENTE NO EXISTE\n");
+}
+
+cli2 = abb_buscar_cliente(clientes, cli.cedula);
+
+printf("\nCedula = %d", cli2.cedula);
+printf("\nNombre = ");
+desplegar_string(cli2.nombre);
+*/
 }

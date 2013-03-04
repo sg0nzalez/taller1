@@ -11,7 +11,15 @@ typedef struct {
 // devuelve la cedula del cliente dado
 long int obtener_cedula_cliente(cliente cli);
 
-// asigna al parametro &nom el nombre del cliente dado
-void obtener_nombre_cliente(cliente cli, string &nom);
+// modifica la cedula del cliente
+void modificar_cedula_cliente(cliente &cli, long int cedula);
+
+// asigna al parametro &nombre el nombre del cliente dado
+void obtener_nombre_cliente(cliente cli, string &nombre);
+
+// modifica el nombre del cliente
+void modificar_nombre_cliente(cliente &cli, string nombre);
+
+
 
 #endif // CLIENTE_H_INCLUDED

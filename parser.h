@@ -5,7 +5,7 @@
 #include "error.h"
 
 // dado un string asigna un comando y los parametros o un error a los parametros dados
-void parsear_comando(string comando, arreglo_string &param, comando &com, error &err);
+void parsear_comando(string str_comando, arreglo_string &param, comando &com, error &err);
 
 // devuelve la cantidad de parametros separados por espacios en blanco
 int cantidad_de_parametros(string str);
