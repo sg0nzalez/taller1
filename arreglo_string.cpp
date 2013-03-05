@@ -43,3 +43,7 @@ void separar_por_espacio(string texto, arreglo_string &parametros) {
     }
     destruir_string(aux);
 }
+
+int obtener_tope_arreglo_string(arreglo_string parametros) {
+    return parametros.tope;
+}

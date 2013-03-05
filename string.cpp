@@ -44,7 +44,6 @@ void desplegar_string(string texto) {
 }
 
 void copiar_string(string &s1, string s2) {
-
     int i = 0;
     int largo = largo_string(s2) + 1;
 

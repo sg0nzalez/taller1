@@ -28,10 +28,10 @@
 
 1361506316 ated upstream
 
-1361842251 source:/Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.cpp
+1362523946 source:/Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.cpp
 	"arreglo_string.h"
 
-1361787873 /Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.h
+1362523923 /Users/sandant/Documents/Projects/CProjects/taller1/arreglo_string.h
 	"string.h"
 
 1361787873 /Users/sandant/Documents/Projects/CProjects/taller1/string.h
@@ -43,12 +43,13 @@
 1361565626 source:/Users/sandant/Documents/Projects/CProjects/taller1/boolean.cpp
 	"boolean.h"
 
-1361918902 source:/Users/sandant/Documents/Projects/CProjects/taller1/main.cpp
+1362524200 source:/Users/sandant/Documents/Projects/CProjects/taller1/main.cpp
 	"parser.h"
 	"archivo.h"
 	"lista_facturas.h"
+	"abb_clientes.h"
 
-1361787873 source:/Users/sandant/Documents/Projects/CProjects/taller1/string.cpp
+1362523494 source:/Users/sandant/Documents/Projects/CProjects/taller1/string.cpp
 	"string.h"
 
 1361844160 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_string.cpp
@@ -66,7 +67,7 @@
 
 1361924760 source:/home/santi/workspace/taller1/test_arreglo_string.cpp
 
-1361787873 source:/Users/sandant/Documents/Projects/CProjects/taller1/linea.cpp
+1361919012 source:/Users/sandant/Documents/Projects/CProjects/taller1/linea.cpp
 	"linea.h"
 	"boolean.h"
 
@@ -82,7 +83,7 @@
 1361844876 /Users/sandant/Documents/Projects/CProjects/taller1/producto.h
 	"arreglo_string.h"
 
-1361918797 source:/Users/sandant/Documents/Projects/CProjects/taller1/producto.cpp
+1361918968 source:/Users/sandant/Documents/Projects/CProjects/taller1/producto.cpp
 	"producto.h"
 
 1361911100 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_producto.cpp
@@ -99,11 +100,11 @@
 
 1361911805 source:/Users/sandant/Documents/Projects/CProjects/taller1/test_errores.cpp
 
-1361912392 /Users/sandant/Documents/Projects/CProjects/taller1/parser.h
+1362518345 /Users/sandant/Documents/Projects/CProjects/taller1/parser.h
 	"comando.h"
 	"error.h"
 
-1361912109 /Users/sandant/Documents/Projects/CProjects/taller1/comando.h
+1362519153 /Users/sandant/Documents/Projects/CProjects/taller1/comando.h
 	"arreglo_string.h"
 
 1361917892 source:/Users/sandant/Documents/Projects/CProjects/taller1/arreglo_lineas.cpp
@@ -112,10 +113,10 @@
 1361918559 /Users/sandant/Documents/Projects/CProjects/taller1/arreglo_lineas.h
 	"linea.h"
 
-1361914029 source:/Users/sandant/Documents/Projects/CProjects/taller1/cliente.cpp
+1362518345 source:/Users/sandant/Documents/Projects/CProjects/taller1/cliente.cpp
 	"cliente.h"
 
-1361913919 /Users/sandant/Documents/Projects/CProjects/taller1/cliente.h
+1362518345 /Users/sandant/Documents/Projects/CProjects/taller1/cliente.h
 	"arreglo_string.h"
 
 1361914337 source:/Users/sandant/Documents/Projects/CProjects/taller1/factura.cpp
@@ -132,13 +133,13 @@
 	"abb_clientes.h"
 	"arreglo_lineas.h"
 
-1361917192 /Users/sandant/Documents/Projects/CProjects/taller1/lista_facturas.h
+1362518990 /Users/sandant/Documents/Projects/CProjects/taller1/lista_facturas.h
 	"factura.h"
 
-1361918482 /Users/sandant/Documents/Projects/CProjects/taller1/abb_productos.h
+1362518345 /Users/sandant/Documents/Projects/CProjects/taller1/abb_productos.h
 	"producto.h"
 
-1361916833 /Users/sandant/Documents/Projects/CProjects/taller1/abb_clientes.h
+1362518345 /Users/sandant/Documents/Projects/CProjects/taller1/abb_clientes.h
 	"cliente.h"
 
 1361924760 source:/home/santi/workspace/taller1/error.cpp
@@ -210,4 +211,18 @@
 	"abb_clientes.h"
 
 1362345840 source:/home/santi/workspace/taller1/test_abb_productos.cpp
+
+1362524288 source:/Users/sandant/Documents/Projects/CProjects/taller1/comando.cpp
+	"comando.h"
+
+1362519843 source:/Users/sandant/Documents/Projects/CProjects/taller1/lista_facturas.cpp
+	"lista_facturas.h"
+
+1362524056 source:/Users/sandant/Documents/Projects/CProjects/taller1/parser.cpp
+	"parser.h"
+
+1362519858 source:/Users/sandant/Documents/Projects/CProjects/taller1/archivos.cpp
+	"archivos.h"
+
+1362502175 /Users/sandant/Documents/Projects/CProjects/taller1/archivos.h
 

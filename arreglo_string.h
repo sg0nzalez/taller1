@@ -24,4 +24,7 @@ typedef struct {
 // dado un string, lo divide en un arreglo de strings por cada espacio en blanco
 void separar_por_espacio(string texto, arreglo_string &parametros);
 
+// devuelve el tope asociado
+int obtener_tope_arreglo_string(arreglo_string parametros);
+
 #endif // ARREGLO_STRING_H_INCLUDED
