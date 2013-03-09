@@ -37,6 +37,8 @@
 		<Unit filename="abb_productos.cpp" />
 		<Unit filename="abb_productos.h" />
 		<Unit filename="archivo.h" />
+		<Unit filename="archivos.cpp" />
+		<Unit filename="archivos.h" />
 		<Unit filename="arreglo_lineas.cpp" />
 		<Unit filename="arreglo_lineas.h" />
 		<Unit filename="arreglo_string.cpp" />
@@ -53,6 +55,7 @@
 		<Unit filename="factura.h" />
 		<Unit filename="linea.cpp" />
 		<Unit filename="linea.h" />
+		<Unit filename="lista_facturas.cpp" />
 		<Unit filename="lista_facturas.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="parser.cpp" />

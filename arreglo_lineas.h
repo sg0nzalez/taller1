@@ -11,7 +11,7 @@ typedef struct {
 } arreglo_lineas;
 
 // agrega la linea dada al arreglo
-void agregar_linea_al_arreglo(arreglo_lineas lineas, linea &lin);
+void agregar_linea_al_arreglo(arreglo_lineas &lineas, linea lin);
 
 // devuelve true si el arreglo tiene menos de 10 lineas
 boolean validar_cant_lineas(arreglo_lineas lineas);
@@ -20,10 +20,10 @@ boolean validar_cant_lineas(arreglo_lineas lineas);
 int importe_arreglo_lineas(arreglo_lineas lineas);
 
 // devuelve el importe + el iva (importe total) de la factura
-float importe_total_arreglo_lineas(arreglo_lineas lineas);
+int importe_total_arreglo_lineas(arreglo_lineas lineas);
 
 // devuelve el iva de la factura
-float iva_arreglo_lineas(arreglo_lineas lineas);
+int iva_arreglo_lineas(arreglo_lineas lineas);
 
 // AGREGAR AL DOC
 // devuelve el tope del arreglo

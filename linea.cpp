@@ -22,25 +22,25 @@ int obtener_cantidad_productos_linea(linea lin) {
 }
 
 // devuelve el precio unitario asociado a la linea dada
-float obtener_precio_unitario_linea(linea lin) {
+int obtener_precio_unitario_linea(linea lin) {
 
     return lin.precio_unitario;
 }
 
 // devuelve la multiplicación entre precio unitario y cantidad
-float importe_linea(linea lin) {
+int importe_linea(linea lin) {
 
 	return lin.precio_unitario * lin.cant_productos;
 }
 
 // devuelve la suma entre importe_linea y iva_linea
-float importe_total_linea(linea lin) {
+int importe_total_linea(linea lin) {
 
 	return importe_linea(lin) + iva_linea(lin);
 }
 
 // devuelve la multiplicación entre importe y IVA
-float iva_linea(linea lin) {
+int iva_linea(linea lin) {
 
     return importe_linea(lin) * IVA;
 }

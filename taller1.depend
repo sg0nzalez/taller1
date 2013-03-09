@@ -14,14 +14,15 @@
 1348843534 source:/home/santi/workspace/taller1/boolean.cpp
 	"boolean.h"
 
-1362851800 source:/home/santi/workspace/taller1/main.cpp
+1362869676 source:/home/santi/workspace/taller1/main.cpp
 	"parser.h"
 	"archivo.h"
 	"lista_facturas.h"
+	"arreglo_lineas.h"
 	"abb_clientes.h"
 	"abb_productos.h"
 
-1362524715 source:/home/santi/workspace/taller1/string.cpp
+1362853064 source:/home/santi/workspace/taller1/string.cpp
 	"string.h"
 
 1361924760 source:/home/santi/workspace/taller1/test_string.cpp
@@ -58,11 +59,11 @@
 
 1361924760 source:/home/santi/workspace/taller1/test_boolean.cpp
 
-1361924760 source:/home/santi/workspace/taller1/linea.cpp
+1362865987 source:/home/santi/workspace/taller1/linea.cpp
 	"linea.h"
 	"boolean.h"
 
-1361728308 /home/santi/workspace/taller1/linea.h
+1362865962 /home/santi/workspace/taller1/linea.h
 	"arreglo_string.h"
 
 1361924760 source:/home/santi/workspace/taller1/test_arreglo_string.cpp
@@ -147,10 +148,10 @@
 
 1361924760 /home/santi/workspace/taller1/error.h
 
-1361924760 source:/home/santi/workspace/taller1/arreglo_lineas.cpp
+1362865840 source:/home/santi/workspace/taller1/arreglo_lineas.cpp
 	"arreglo_lineas.h"
 
-1361924760 /home/santi/workspace/taller1/arreglo_lineas.h
+1362865872 /home/santi/workspace/taller1/arreglo_lineas.h
 	"linea.h"
 
 1362850477 source:/home/santi/workspace/taller1/cliente.cpp
@@ -184,35 +185,35 @@
 1362524449 /home/santi/workspace/taller1/lista_facturas.h
 	"factura.h"
 
-1362850480 /home/santi/workspace/taller1/abb_productos.h
+1362853064 /home/santi/workspace/taller1/abb_productos.h
 	"producto.h"
 
 1361924760 /home/santi/workspace/taller1/producto.h
 	"arreglo_string.h"
 
-1362524454 /home/santi/workspace/taller1/abb_clientes.h
+1362853064 /home/santi/workspace/taller1/abb_clientes.h
 	"cliente.h"
 
 1361924760 source:/home/santi/workspace/taller1/producto.cpp
 	"producto.h"
 
-1362524454 source:/home/santi/workspace/taller1/test_cliente.cpp
+1362853064 source:/home/santi/workspace/taller1/test_cliente.cpp
 
 1361924760 source:/home/santi/workspace/taller1/test_errores.cpp
 
-1361728833 source:/home/santi/workspace/taller1/test_linea.cpp
+1362869979 source:/home/santi/workspace/taller1/test_linea.cpp
 
 1361924760 source:/home/santi/workspace/taller1/test_producto.cpp
 
 1362524449 source:/home/santi/workspace/taller1/parser.cpp
 	"parser.h"
 
-1362524454 source:/home/santi/workspace/taller1/abb_clientes.cpp
+1362853064 source:/home/santi/workspace/taller1/abb_clientes.cpp
 	"abb_clientes.h"
 
-1362851596 source:/home/santi/workspace/taller1/test_abb_productos.cpp
+1362853064 source:/home/santi/workspace/taller1/test_abb_productos.cpp
 
-1362524690 source:/home/santi/workspace/taller1/test_abb_clientes.cpp
+1362853064 source:/home/santi/workspace/taller1/test_abb_clientes.cpp
 
 1362524288 source:/Users/sandant/Documents/Projects/CProjects/taller1/comando.cpp
 	"comando.h"
@@ -228,7 +229,7 @@
 
 1362502175 /Users/sandant/Documents/Projects/CProjects/taller1/archivos.h
 
-1362850450 source:/home/santi/workspace/taller1/abb_productos.cpp
+1362853064 source:/home/santi/workspace/taller1/abb_productos.cpp
 	"abb_productos.h"
 
 1362524449 source:/home/santi/workspace/taller1/archivos.cpp

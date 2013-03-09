@@ -8,7 +8,7 @@ const float IVA = 0.22;
 typedef struct {
     int codigo_producto;
     int cant_productos;
-    float precio_unitario;
+    int precio_unitario;
 } linea;
 
 // devuelve true si la cantidad dada es positiva
@@ -24,16 +24,16 @@ int obtener_codigo_producto_linea(linea lin);
 int obtener_cantidad_productos_linea(linea lin);
 
 // devuelve el precio unitario asociado a la linea dada
-float obtener_precio_unitario_linea(linea lin);
+int obtener_precio_unitario_linea(linea lin);
 
 // devuelve la multiplicación entre precio unitario y cantidad
-float importe_linea(linea lin);
+int importe_linea(linea lin);
 
 // devuelve la suma entre importe_linea y iva_linea
-float importe_total_linea(linea lin);
+int importe_total_linea(linea lin);
 
 // devuelve la multiplicación entre importe y IVA
-float iva_linea(linea lin);
+int iva_linea(linea lin);
 
 #endif // LINEA_H_INCLUDED
 
