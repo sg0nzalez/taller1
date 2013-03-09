@@ -2,9 +2,11 @@
 #include "archivo.h"
 #include "lista_facturas.h"
 #include "abb_clientes.h"
+#include "abb_productos.h"
 
 int main() {
 
+/*
     string com;
     error err;
     comando coman;
@@ -60,4 +62,5 @@ int main() {
     }
 
     printf("ADIOS :D");
+*/
 }

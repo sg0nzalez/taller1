@@ -12,10 +12,10 @@ typedef struct nodo_producto {
 typedef nodo_abb_productos *abb_productos;
 
 // crea un nuevo abb de productos
-void abb_crear_producto(abb_productos &productos);
+void crear_abb_productos(abb_productos &productos);
 
 // inserta el producto dado en el abb de productos dado
-void abb_insertar_producto(abb_productos productos, producto &prod);
+void abb_insertar_producto(abb_productos &productos, producto prod);
 
 // precondicion: el codigo debe ser valido
 //

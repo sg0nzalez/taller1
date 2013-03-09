@@ -6,7 +6,7 @@ void crear_abb_clientes(abb_clientes &clientes){
 }
 
 // inserta el cliente en el abb
-void abb_insertar_cliente(abb_clientes clientes, cliente &cli){
+void abb_insertar_cliente(abb_clientes &clientes, cliente cli){
 
     boolean existe_cliente;
     existe_cliente = abb_existe_cliente(clientes, obtener_cedula_cliente(cli));

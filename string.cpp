@@ -45,9 +45,13 @@ void desplegar_string(string texto) {
 
 void copiar_string(string &s1, string s2) {
     int i = 0;
+
     int largo = largo_string(s2) + 1;
 
+    s1 = NULL;
+
     delete [] s1;
+
     s1 = new char[largo];
 
     while (s2[i] != '\0'){
