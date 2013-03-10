@@ -1,36 +1,31 @@
 #include "lista_facturas.h"
 
 void crear_lista_factura(lista_facturas &lista_fac) {
-    //lista_fac = NULL;
+    lista_fac = NULL;
 }
 
-void lista_insertar_factura(lista_facturas &facturas, factura fact) {
-/*    lista_facturas aux = new nodo_factura;
+void lista_insertar_factura(lista_facturas &lista_fact, factura fact) {
 
-    aux->info = fact;
-    aux->sig = facturas;
-    facturas = aux;
+    if (lista_fact == NULL) {
+        lista_fact = new nodo_factura;
 
-    aux = NULL;*/
+        lista_fact->fac = fact;
+        lista_fact->sig_factura = NULL;
+    }
+    else {
+        lista_insertar_factura(lista_fact->sig_factura, fact);
+    }
 }
 
 boolean existe_numero_factura(lista_facturas facturas, int numFactura) {
-    /*lista_facturas aux = facturas;
+    lista_facturas aux = facturas;
 
     while (aux != NULL) {
-        if (aux == numFactura)
+        if (aux->fac.numero == numFactura)
             return TRUE;
 
-        aux = aux->sig;
+        aux = aux->sig_factura;
     }
 
-    return FALSE;*/
-}
-
-void borrar(lista_facturas &lista_fac) {
-    /*lista aux;
-    aux = lista_fac;
-    lista_fac = lista_fac->sig;
-
-    delete aux;*/
+    return FALSE;
 }

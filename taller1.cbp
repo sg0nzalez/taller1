@@ -66,6 +66,7 @@
 		<Unit filename="string.h" />
 		<Unit filename="test_abb_clientes.cpp" />
 		<Unit filename="test_abb_productos.cpp" />
+		<Unit filename="test_arreglo_lineas.cpp" />
 		<Unit filename="test_arreglo_string.cpp" />
 		<Unit filename="test_boolean.cpp" />
 		<Unit filename="test_cliente.cpp" />
