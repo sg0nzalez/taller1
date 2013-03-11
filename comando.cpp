@@ -2,14 +2,15 @@
 
 void listar_comandos() {
     printf("\t+ help\n");
-    printf("\t+ crearcliente\n");
-    printf("\t+ crearproducto\n");
+    printf("\t+ crearcliente cedula nombre_apellido\n");
+    printf("\t+ crearproducto codigo nombre\n");
     printf("\t+ listarclientes\n");
     printf("\t+ listarproductos\n");
-    printf("\t+ crearfactura\n");
-    printf("\t+ agregarlinea\n");
-    printf("\t+ confirmarfactura\n");
-    printf("\t+ load\n");
+    printf("\t+ crearfactura numero\n");
+    printf("\t+ agregarlinea numero_factura numero_producto cantidad_producto precio_unitario\n");
+    printf("\t+ confirmarfactura numero_factura\n");
+    printf("\t+ save nombre_archivo\n");
+    printf("\t+ load nombre_archivo\n");
     printf("\t+ exit\n");
 }
 
@@ -22,6 +23,7 @@ boolean validar_comando(string comando_a_validar) {
         comparar_2_strings(comando_a_validar, "crearfactura") ||
         comparar_2_strings(comando_a_validar, "agregarlinea") ||
         comparar_2_strings(comando_a_validar, "confirmarfactura") ||
+        comparar_2_strings(comando_a_validar, "save") ||
         comparar_2_strings(comando_a_validar, "load") ||
         comparar_2_strings(comando_a_validar, "exit")) {
         return TRUE;
@@ -47,6 +49,8 @@ comando obtener_comando(string comando_string) {
         return AGREGAR_LINEA;
     } else if (comparar_2_strings(comando_string, "confirmarfactura") == TRUE) {
         return CONFIRMAR_FACTURA;
+    } else if (comparar_2_strings(comando_string, "save") == TRUE) {
+        return SAVE;
     } else if (comparar_2_strings(comando_string, "load") == TRUE) {
         return LOAD;
     } else if (comparar_2_strings(comando_string, "exit") == TRUE) {

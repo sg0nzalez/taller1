@@ -23,7 +23,7 @@ void listar_comandos();
 // devuelve true si el comando dado es un comando valido
 boolean validar_comando(string comando);
 
-// precondici—n: debe ser un comando v‡lido (usar validar_comando)
+// precondición: debe ser un comando válido (usar validar_comando)
 // devuelve el comando
 comando obtener_comando(string comando_string);
 

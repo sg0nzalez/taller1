@@ -6,7 +6,9 @@ void separar_por_espacio(string texto, arreglo_string &parametros) {
     int i = 0;
     int k = 0;
 
-    while ((texto[i] != '\n') && (i < MAX)) {
+    parametros.tope = 0;
+
+    while ((texto[i] != '\0') && (i < MAX)) {
         if(texto[i]==' '){
             if(texto[i-1]!=' ' && texto[i+1]!=' ' && texto[i-1]!=NULL){
 
@@ -36,11 +38,11 @@ void separar_por_espacio(string texto, arreglo_string &parametros) {
     }
 
     if(aux[0]!=NULL) {
-
         aux[k] = '\0';
-        parametros.arre[parametros.tope] = aux;
+        copiar_string(parametros.arre[parametros.tope], aux);
         parametros.tope++;
     }
+
     destruir_string(aux);
 }
 

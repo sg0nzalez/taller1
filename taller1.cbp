@@ -71,7 +71,9 @@
 		<Unit filename="test_boolean.cpp" />
 		<Unit filename="test_cliente.cpp" />
 		<Unit filename="test_errores.cpp" />
+		<Unit filename="test_factura.cpp" />
 		<Unit filename="test_linea.cpp" />
+		<Unit filename="test_lista_facturas.cpp" />
 		<Unit filename="test_producto.cpp" />
 		<Unit filename="test_producto.h" />
 		<Unit filename="test_string.cpp" />

@@ -1,37 +1,77 @@
 #include "parser.h"
 
-void parsear_comando(string comando_string, arreglo_string &param, comando &com, error &err) {
+void parsear_comando(string comando_string, arreglo_string &arr_params, comando &com, error &err) {
     // obtener todos los parametros
-    separar_por_espacio(comando_string, param);
+    separar_por_espacio(comando_string, arr_params);
 
-    if (validar_comando(param.arre[0]) == TRUE) {
-        err = COMANDO_VALIDO;
-        com = obtener_comando(param.arre[0]);
-    } else {
-        err = COMANDO_INVALIDO;
-    }
+    // dado el primer parametro averiguar que comando fue ingresado
+    obtener_comando(arr_params.arre[0], com, err);
 }
 
 boolean comparar_cant_params_por_comando(comando com, int cant_param) {
-    if (com == HELP && cant_param > 1) {
-        return FALSE;
-    } else if (com == LOAD && cant_param > 1) {
-        return FALSE;
-    } else if (com == EXIT && cant_param > 1) {
+    if ((com == HELP && cant_param != 1) ||
+        (com == CREAR_CLIENTE && cant_param != 3) ||
+        (com == LISTAR_CLIENTES && cant_param != 1) ||
+        (com == LOAD && cant_param != 1) ||
+        (com == EXIT && cant_param != 1)) {
         return FALSE;
     }
 
     return TRUE;
 }
 
-int convertir_string_a_entero(string str, error &err) {
+boolean validar_formato_string(string string_a_chequear) {
+    int i = 0;
 
+    while ((string_a_chequear[i] != '\0') && (i < MAX)) {
+        if ((string_a_chequear[i] < 65 || string_a_chequear[i] > 90) &&
+            (string_a_chequear[i] < 97 || string_a_chequear[i] > 122) &&
+            (string_a_chequear[i] != 95))
+            return FALSE;
+
+        i++;
+    }
+
+    return TRUE;
 }
 
-boolean validar_formato_string(string string_a_chequear, error &err) {
+boolean validar_formato_entero(string string_a_chequear) {
+    int i = 0;
 
+    while ((string_a_chequear[i] != '\0') && (i < MAX)) {
+        if (string_a_chequear[i] < 48 || string_a_chequear[i] > 57)
+            return FALSE;
+
+        i++;
+    }
+
+    return TRUE;
 }
 
-boolean validar_formato_entero(string string_a_chequear, error &err) {
+void obtener_comando(string comando_string, comando &com, error &err) {
+    err = COMANDO_VALIDO;
 
+    if (comparar_2_strings(comando_string, "help") == TRUE) {
+        com = HELP;
+    } else if (comparar_2_strings(comando_string, "crearcliente") == TRUE) {
+        com = CREAR_CLIENTE;
+    } else if (comparar_2_strings(comando_string, "crearproducto") == TRUE) {
+        com = CREAR_PRODUCTO;
+    } else if (comparar_2_strings(comando_string, "listarclientes") == TRUE) {
+        com = LISTAR_CLIENTES;
+    } else if (comparar_2_strings(comando_string, "listarproductos") == TRUE) {
+        com = LISTAR_PRODUCTOS;
+    } else if (comparar_2_strings(comando_string, "crearfactura") == TRUE) {
+        com = CREAR_FACTURA;
+    } else if (comparar_2_strings(comando_string, "agregarlinea") == TRUE) {
+        com = AGREGAR_LINEA;
+    } else if (comparar_2_strings(comando_string, "confirmarfactura") == TRUE) {
+        com = CONFIRMAR_FACTURA;
+    } else if (comparar_2_strings(comando_string, "load") == TRUE) {
+        com = LOAD;
+    } else if (comparar_2_strings(comando_string, "exit") == TRUE) {
+        com = EXIT;
+    } else {
+        err = COMANDO_INVALIDO;
+    }
 }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1362524449 source:/home/santi/workspace/taller1/arreglo_string.cpp
+1362963119 source:/home/santi/workspace/taller1/arreglo_string.cpp
 	"arreglo_string.h"
 
 1362524449 /home/santi/workspace/taller1/arreglo_string.h
@@ -14,9 +14,9 @@
 1348843534 source:/home/santi/workspace/taller1/boolean.cpp
 	"boolean.h"
 
-1362927867 source:/home/santi/workspace/taller1/main.cpp
+1362970031 source:/home/santi/workspace/taller1/main.cpp
 	"parser.h"
-	"archivo.h"
+	"archivos.h"
 	"lista_facturas.h"
 	"arreglo_lineas.h"
 	"abb_clientes.h"
@@ -166,13 +166,13 @@
 1361924760 /home/santi/workspace/taller1/factura.h
 	"arreglo_lineas.h"
 
-1362524449 source:/home/santi/workspace/taller1/comando.cpp
+1362972666 source:/home/santi/workspace/taller1/comando.cpp
 	"comando.h"
 
-1362524449 /home/santi/workspace/taller1/comando.h
+1362965543 /home/santi/workspace/taller1/comando.h
 	"arreglo_string.h"
 
-1362406318 /home/santi/workspace/taller1/parser.h
+1362965471 /home/santi/workspace/taller1/parser.h
 	"comando.h"
 	"error.h"
 
@@ -182,7 +182,7 @@
 	"abb_clientes.h"
 	"arreglo_lineas.h"
 
-1362933084 /home/santi/workspace/taller1/lista_facturas.h
+1362933394 /home/santi/workspace/taller1/lista_facturas.h
 	"factura.h"
 
 1362853064 /home/santi/workspace/taller1/abb_productos.h
@@ -205,7 +205,7 @@
 
 1361924760 source:/home/santi/workspace/taller1/test_producto.cpp
 
-1362524449 source:/home/santi/workspace/taller1/parser.cpp
+1362965439 source:/home/santi/workspace/taller1/parser.cpp
 	"parser.h"
 
 1362853064 source:/home/santi/workspace/taller1/abb_clientes.cpp
@@ -232,15 +232,21 @@
 1362853064 source:/home/santi/workspace/taller1/abb_productos.cpp
 	"abb_productos.h"
 
-1362524449 source:/home/santi/workspace/taller1/archivos.cpp
+1362973642 source:/home/santi/workspace/taller1/archivos.cpp
 	"archivos.h"
 
-1362524449 /home/santi/workspace/taller1/archivos.h
+1362938452 /home/santi/workspace/taller1/archivos.h
+	"lista_facturas.h"
+	"abb_productos.h"
+	"abb_clientes.h"
+	"arreglo_lineas.h"
 
-1362926023 source:/home/santi/workspace/taller1/lista_facturas.cpp
+1362933394 source:/home/santi/workspace/taller1/lista_facturas.cpp
 	"lista_facturas.h"
 
 1362871477 source:/home/santi/workspace/taller1/test_arreglo_lineas.cpp
 
-1362885907 source:/home/santi/workspace/taller1/test_factura.cpp
+1362933394 source:/home/santi/workspace/taller1/test_factura.cpp
+
+1362933394 source:/home/santi/workspace/taller1/test_lista_facturas.cpp
 
