@@ -253,13 +253,13 @@
 1363051968 source:\\psf\home\documents\projects\cprojects\taller1\abb_clientes.cpp
 	"abb_clientes.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\abb_clientes.h
+1363053079 \\psf\home\documents\projects\cprojects\taller1\abb_clientes.h
 	"cliente.h"
 
 1362518345 \\psf\home\documents\projects\cprojects\taller1\cliente.h
 	"arreglo_string.h"
 
-1363051215 \\psf\home\documents\projects\cprojects\taller1\arreglo_string.h
+1363053012 \\psf\home\documents\projects\cprojects\taller1\arreglo_string.h
 	"string.h"
 
 1361787873 \\psf\home\documents\projects\cprojects\taller1\string.h
@@ -271,7 +271,7 @@
 1363052472 source:\\psf\home\documents\projects\cprojects\taller1\abb_productos.cpp
 	"abb_productos.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\abb_productos.h
+1363053091 \\psf\home\documents\projects\cprojects\taller1\abb_productos.h
 	"producto.h"
 
 1361844876 \\psf\home\documents\projects\cprojects\taller1\producto.h
@@ -325,7 +325,7 @@
 1363048822 source:\\psf\home\documents\projects\cprojects\taller1\lista_facturas.cpp
 	"lista_facturas.h"
 
-1363051744 source:\\psf\home\documents\projects\cprojects\taller1\parser.cpp
+1363053664 source:\\psf\home\documents\projects\cprojects\taller1\parser.cpp
 	"parser.h"
 
 1363048822 \\psf\home\documents\projects\cprojects\taller1\parser.h

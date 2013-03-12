@@ -11,14 +11,20 @@ void crear_cliente(arreglo_string params, abb_clientes &clientes, error &err);
 void crear_producto(arreglo_string params, abb_productos &productos, error &err);
 void listar_clientes(abb_clientes clientes);
 void listar_productos(abb_productos productos);
+void crear_factura(arreglo_string params, lista_facturas &facturas, error &err);
 
 int main() {
-    // crear los abb de clientes y productos
+    // abb de clientes
     abb_clientes clientes;
     crear_abb_clientes(clientes);
-    //
+
+    // abb de productos
     abb_productos productos;
     crear_abb_productos(productos);
+
+    // lista de facturas
+    lista_facturas facturas;
+    crear_lista_factura(facturas);
 
     //
     string usuario_string;
@@ -97,7 +103,7 @@ int main() {
                     break;
 
                 case CREAR_FACTURA:
-                    printf("\ncrear factura\n");
+                    crear_factura(parametros, facturas, error_obtenido);
                     break;
                 case AGREGAR_LINEA:
                     printf("\nagregar linea\n");
@@ -181,6 +187,9 @@ void listar_clientes(abb_clientes clientes) {
     if (clientes != NULL) {
         listar_clientes(clientes->nodo_izquierda);
 
+        if (clientes->nodo_izquierda != NULL)
+            printf("\n");
+
         printf("%i - ", obtener_cedula_cliente(clientes->cli));
 
         string nombre_cliente;
@@ -199,6 +208,9 @@ void listar_productos(abb_productos productos) {
     if (productos != NULL) {
         listar_productos(productos->nodo_izquierda);
 
+        if (productos->nodo_izquierda != NULL)
+            printf("\n");
+
         printf("%i - ", obtener_codigo_producto(productos->prod));
 
         string nombre_producto;
@@ -211,4 +223,8 @@ void listar_productos(abb_productos productos) {
 
         listar_productos(productos->nodo_derecha);
     }
+}
+
+void crear_factura(arreglo_string params, lista_facturas &facturas, error &err) {
+
 }

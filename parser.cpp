@@ -14,6 +14,7 @@ boolean comparar_cant_params_por_comando(comando com, int cant_param) {
         (com == CREAR_PRODUCTO && cant_param != 3) ||
         (com == LISTAR_CLIENTES && cant_param != 1) ||
         (com == LISTAR_PRODUCTOS && cant_param != 1) ||
+        (com == CREAR_FACTURA && cant_param != 2) ||
         (com == LOAD && cant_param != 1) ||
         (com == EXIT && cant_param != 1)) {
         return FALSE;
