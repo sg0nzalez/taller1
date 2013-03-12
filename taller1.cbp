@@ -36,7 +36,6 @@
 		<Unit filename="abb_clientes.h" />
 		<Unit filename="abb_productos.cpp" />
 		<Unit filename="abb_productos.h" />
-		<Unit filename="archivo.h" />
 		<Unit filename="archivos.cpp" />
 		<Unit filename="archivos.h" />
 		<Unit filename="arreglo_lineas.cpp" />

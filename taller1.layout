@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="abb_clientes.cpp" open="1" top="0" tabpos="3">
+	<File name="abb_clientes.cpp" open="1" top="0" tabpos="12">
 		<Cursor position="187" topLine="0" />
 	</File>
-	<File name="abb_clientes.h" open="0" top="0" tabpos="4">
-		<Cursor position="90" topLine="0" />
+	<File name="abb_clientes.h" open="1" top="0" tabpos="6">
+		<Cursor position="202" topLine="0" />
 	</File>
 	<File name="abb_productos.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="91" topLine="0" />
 	</File>
-	<File name="abb_productos.h" open="1" top="0" tabpos="2">
+	<File name="abb_productos.h" open="1" top="0" tabpos="14">
 		<Cursor position="336" topLine="0" />
 	</File>
-	<File name="archivo.h" open="0" top="0" tabpos="10">
-		<Cursor position="0" topLine="0" />
+	<File name="archivos.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1939" topLine="37" />
+	</File>
+	<File name="archivos.h" open="1" top="0" tabpos="3">
+		<Cursor position="2295" topLine="28" />
 	</File>
 	<File name="arreglo_lineas.cpp" open="0" top="0" tabpos="13">
 		<Cursor position="705" topLine="0" />
@@ -28,22 +31,25 @@
 	<File name="cliente.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="345" topLine="0" />
 	</File>
-	<File name="cliente.h" open="0" top="0" tabpos="9">
-		<Cursor position="545" topLine="0" />
+	<File name="cliente.h" open="1" top="0" tabpos="5">
+		<Cursor position="107" topLine="0" />
 	</File>
-	<File name="comando.cpp" open="0" top="0" tabpos="4">
+	<File name="comando.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="comando.h" open="0" top="0" tabpos="5">
+	<File name="comando.h" open="1" top="0" tabpos="7">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="error.h" open="0" top="0" tabpos="6">
-		<Cursor position="496" topLine="0" />
+	<File name="error.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="error.h" open="1" top="0" tabpos="11">
+		<Cursor position="246" topLine="0" />
 	</File>
 	<File name="factura.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="506" topLine="0" />
 	</File>
-	<File name="factura.h" open="1" top="0" tabpos="6">
+	<File name="factura.h" open="0" top="0" tabpos="6">
 		<Cursor position="458" topLine="0" />
 	</File>
 	<File name="linea.cpp" open="0" top="0" tabpos="16">
@@ -52,23 +58,29 @@
 	<File name="linea.h" open="0" top="0" tabpos="15">
 		<Cursor position="317" topLine="0" />
 	</File>
-	<File name="lista_facturas.cpp" open="1" top="0" tabpos="4">
+	<File name="lista_facturas.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="688" topLine="0" />
 	</File>
-	<File name="lista_facturas.h" open="1" top="0" tabpos="5">
+	<File name="lista_facturas.h" open="0" top="0" tabpos="5">
 		<Cursor position="598" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="164" topLine="0" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="771" topLine="6" />
+	</File>
+	<File name="parser.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="2562" topLine="46" />
 	</File>
 	<File name="parser.h" open="0" top="0" tabpos="2">
 		<Cursor position="633" topLine="0" />
 	</File>
-	<File name="producto.h" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+	<File name="producto.h" open="1" top="0" tabpos="13">
+		<Cursor position="153" topLine="0" />
 	</File>
-	<File name="string.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="176" topLine="0" />
+	<File name="string.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="521" topLine="0" />
+	</File>
+	<File name="string.h" open="1" top="0" tabpos="15">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="test_abb_clientes.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="711" topLine="0" />
@@ -85,13 +97,13 @@
 	<File name="test_cliente.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="486" topLine="0" />
 	</File>
-	<File name="test_factura.cpp" open="1" top="0" tabpos="7">
+	<File name="test_factura.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="396" topLine="0" />
 	</File>
 	<File name="test_linea.cpp" open="0" top="0" tabpos="17">
 		<Cursor position="1520" topLine="7" />
 	</File>
-	<File name="test_lista_facturas.cpp" open="1" top="1" tabpos="8">
+	<File name="test_lista_facturas.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="2" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
