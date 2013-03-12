@@ -13,34 +13,6 @@ void listar_clientes(abb_clientes clientes);
 void listar_productos(abb_productos productos);
 
 int main() {
-
-    /*
-    abb_clientes clientes = NULL;
-
-    levantar_abb_cliente(clientes);
-
-
-    string prueba;
-    cargar_string(prueba);
-
-    boolean valido = validar_nombre_archivo(prueba);
-
-    if(valido) {
-        printf("\nEL NOMBRE DEL ARCHIVO ES CORRECTO\n");
-    } else {
-        printf("\nEL NOMBRE DEL ARCHIVO NO ES CORRECTO\n");
-    }
-
-    boolean existeArchivo = existe_archivo(prueba);
-
-    if(existeArchivo) {
-        printf("\nEL ARCHIVO EXISTE\n");
-    } else {
-        printf("\nEL ARCHIVO NO EXISTE\n");
-    }
-
-}
-    */
     // crear los abb de clientes y productos
     abb_clientes clientes;
     crear_abb_clientes(clientes);
@@ -51,6 +23,9 @@ int main() {
     //
     string usuario_string;
     arreglo_string parametros;
+
+    // setea el tope a 0
+    crear_arreglo_string(parametros);
 
     error error_obtenido;
     comando comando_obtenido;
@@ -70,33 +45,55 @@ int main() {
                     break;
 
                 case CREAR_CLIENTE:
-                    error error_cliente;
-                    error_cliente = COMANDO_VALIDO;
-                    crear_cliente(parametros, clientes, error_cliente);
+                    crear_cliente(parametros, clientes, error_obtenido);
 
-                    if (error_cliente == FORMATO_INCORRECTO || error_cliente == ERROR_DE_SINTAXIS)
-                        printf("Cliente no fue creado.");
-                    else
+                    switch(error_obtenido) {
+                    case FORMATO_INCORRECTO:
+                        printf("Parametro con formato incorrecto.");
+                        break;
+                    case ERROR_DE_SINTAXIS:
+                        printf("Cantidad de parametros erronea.");
+                        break;
+                    case CEDULA_EXISTENTE:
+                        printf("El usuario ya existe.");
+                        break;
+                    default:
                         printf("Cliente creado exitosamente.");
+                    }
                     break;
 
                 case CREAR_PRODUCTO:
-                    error error_producto;
-                    error_producto = COMANDO_VALIDO;
-                    crear_producto(parametros, productos, error_producto);
+                    crear_producto(parametros, productos, error_obtenido);
 
-                    if (error_producto == FORMATO_INCORRECTO || error_producto == ERROR_DE_SINTAXIS)
-                        printf("Producto no fue creado.");
-                    else
+                    switch(error_obtenido) {
+                    case FORMATO_INCORRECTO:
+                        printf("Parametro con formato incorrecto.");
+                        break;
+                    case ERROR_DE_SINTAXIS:
+                        printf("Cantidad de parametros erronea.");
+                        break;
+                    case CEDULA_EXISTENTE:
+                        printf("El producto ya existe.");
+                        break;
+                    default:
                         printf("Producto creado exitosamente.");
+                    }
                     break;
 
                 case LISTAR_CLIENTES:
+                    if (clientes != NULL) {
                     listar_clientes(clientes);
+                    } else {
+                        printf("No hay clientes disponibles.");
+                    }
                     break;
 
                 case LISTAR_PRODUCTOS:
-                    listar_productos(productos);
+                    if (productos != NULL) {
+                        listar_productos(productos);
+                    } else {
+                        printf("No hay productos disponibles.");
+                    }
                     break;
 
                 case CREAR_FACTURA:
@@ -113,8 +110,11 @@ int main() {
                     break;
             }
         } else {
-            printf("\nComando Invalidoo\n");
+            printf("Comando invalido.");
         }
+
+        borrar_arreglo_string(parametros);
+        crear_arreglo_string(parametros);
 
         printf("\nIngrese comando: ");
         cargar_string(usuario_string);
@@ -138,7 +138,11 @@ void crear_cliente(arreglo_string params, abb_clientes &clientes, error &err) {
             nuevo_cliente.cedula = atoi(params.arre[1]);
             nuevo_cliente.nombre = params.arre[2];
 
-            abb_insertar_cliente(clientes, nuevo_cliente);
+            if (abb_existe_cliente(clientes, obtener_cedula_cliente(nuevo_cliente)) == FALSE) {
+                abb_insertar_cliente(clientes, nuevo_cliente);
+            } else {
+                err = CEDULA_EXISTENTE;
+            }
         } else {
             err = FORMATO_INCORRECTO;
         }
@@ -160,7 +164,11 @@ void crear_producto(arreglo_string params, abb_productos &productos, error &err)
             nuevo_producto.codigo = atoi(params.arre[1]);
             nuevo_producto.nombre = params.arre[2];
 
-            abb_insertar_producto(productos, nuevo_producto);
+            if (abb_existe_codigo(productos, obtener_codigo_producto(nuevo_producto)) == FALSE) {
+                abb_insertar_producto(productos, nuevo_producto);
+            } else {
+                err = CEDULA_EXISTENTE;
+            }
         } else {
             err = FORMATO_INCORRECTO;
         }
@@ -170,8 +178,7 @@ void crear_producto(arreglo_string params, abb_productos &productos, error &err)
 }
 
 void listar_clientes(abb_clientes clientes) {
-    if (clientes != NULL)
-    {
+    if (clientes != NULL) {
         listar_clientes(clientes->nodo_izquierda);
 
         printf("%i - ", obtener_cedula_cliente(clientes->cli));
@@ -179,15 +186,17 @@ void listar_clientes(abb_clientes clientes) {
         string nombre_cliente;
         obtener_nombre_cliente(clientes->cli, nombre_cliente);
         desplegar_string(nombre_cliente);
-        printf("\n");
+        destruir_string(nombre_cliente);
+
+        if (clientes->nodo_derecha != NULL)
+            printf("\n");
 
         listar_clientes(clientes->nodo_derecha);
     }
 }
 
 void listar_productos(abb_productos productos) {
-    if (productos != NULL)
-    {
+    if (productos != NULL) {
         listar_productos(productos->nodo_izquierda);
 
         printf("%i - ", obtener_codigo_producto(productos->prod));
@@ -195,7 +204,10 @@ void listar_productos(abb_productos productos) {
         string nombre_producto;
         obtener_nombre_producto(productos->prod, nombre_producto);
         desplegar_string(nombre_producto);
-        printf("\n");
+        destruir_string(nombre_producto);
+
+        if (productos->nodo_derecha != NULL)
+            printf("\n");
 
         listar_productos(productos->nodo_derecha);
     }

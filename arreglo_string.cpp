@@ -1,12 +1,19 @@
 #include "arreglo_string.h"
 
-void separar_por_espacio(string texto, arreglo_string &parametros) {
+void crear_arreglo_string(arreglo_string &arr_string) {
+    arr_string.tope = 0;
+}
 
+void borrar_arreglo_string(arreglo_string &arr_string) {
+    for(int i = 0; i < arr_string.tope; i++) {
+        arr_string.arre[i] = NULL;
+    }
+}
+
+void separar_por_espacio(string texto, arreglo_string &parametros) {
     string aux = new char[MAX];
     int i = 0;
     int k = 0;
-
-    parametros.tope = 0;
 
     while ((texto[i] != '\0') && (i < MAX)) {
         if(texto[i]==' '){

@@ -20,6 +20,11 @@ typedef struct {
     int tope;
 } arreglo_string;
 
+// setea el tope en 0
+void crear_arreglo_string(arreglo_string &arr_string);
+
+// borra todos los strings guardados dependendiendo del tope que tenga
+void borrar_arreglo_string(arreglo_string &arr_string);
 
 // dado un string, lo divide en un arreglo de strings por cada espacio en blanco
 void separar_por_espacio(string texto, arreglo_string &parametros);

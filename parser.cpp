@@ -11,7 +11,9 @@ void parsear_comando(string comando_string, arreglo_string &arr_params, comando 
 boolean comparar_cant_params_por_comando(comando com, int cant_param) {
     if ((com == HELP && cant_param != 1) ||
         (com == CREAR_CLIENTE && cant_param != 3) ||
+        (com == CREAR_PRODUCTO && cant_param != 3) ||
         (com == LISTAR_CLIENTES && cant_param != 1) ||
+        (com == LISTAR_PRODUCTOS && cant_param != 1) ||
         (com == LOAD && cant_param != 1) ||
         (com == EXIT && cant_param != 1)) {
         return FALSE;

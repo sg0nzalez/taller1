@@ -15,6 +15,8 @@ typedef nodo_abb_clientes *abb_clientes;
 // crea el abb
 void crear_abb_clientes(abb_clientes &clientes);
 
+// precondicion: la cedula no debe existir del usuario dado
+//
 // inserta el cliente en el abb
 void abb_insertar_cliente(abb_clientes &clientes, cliente cli);
 

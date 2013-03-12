@@ -14,6 +14,8 @@ typedef nodo_abb_productos *abb_productos;
 // crea un nuevo abb de productos
 void crear_abb_productos(abb_productos &productos);
 
+// precondicion: el codigo no debe existir del producto dado
+//
 // inserta el producto dado en el abb de productos dado
 void abb_insertar_producto(abb_productos &productos, producto prod);
 
