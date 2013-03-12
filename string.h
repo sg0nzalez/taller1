@@ -30,6 +30,8 @@ void copiar_string(string &s1, string s2);
 int largo_string(string s);
 
 // comparar dos strings si son iguales
-boolean comparar_2_strings(string s1,string s2);
+boolean comparar_2_strings(string s1, string s2);
+
+void concatenar_string(string &s1, string s2);
 
 #endif // STRING_H_INCLUDED

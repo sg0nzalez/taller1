@@ -1,4 +1,19 @@
 /*
+
+    string nombre = "Enzo_";
+    string apellido = "Francescoli";
+    string nombre_apellido = "Enzo_Francescoli";
+
+    concatenar_string(nombre, apellido);
+
+    boolean sonIguales = comparar_2_strings(nombre, nombre_apellido);
+
+    if(sonIguales){
+        printf("\nEL CONCATENAR STRING FUNCIONA CORRECTAMENTE\n");
+    } else {
+        printf("\nEL CONCATENAR STRING NO FUNCIONA CORRECTAMENTE\n");
+    }
+
     string s1;
 
     crear_string(s1);

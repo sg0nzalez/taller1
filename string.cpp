@@ -90,3 +90,35 @@ boolean comparar_2_strings(string s1,string s2) {
 
     return iguales;
 }
+
+void concatenar_string(string &s1,string s2) {
+
+    string aux;
+    crear_string(aux);
+    copiar_string(aux, s1);
+
+    int largo = largo_string(s1) + largo_string(s2) + 1;
+
+    if (largo > MAX)
+        largo = MAX;
+
+    s1 = NULL;
+    delete [] s1;
+    s1 = new char[largo];
+
+    int i=0;
+    while (aux[i] != '\0') {
+        s1[i] = aux[i];
+        i++;
+    }
+
+    int j=0;
+    while (s2[j] != '\0' && i < MAX-1) {
+        s1[i] = s2[j];
+        i++;
+        j++;
+    }
+    s1[i] = '\0';
+    destruir_string(aux);
+}
+

@@ -47,8 +47,13 @@ void levantar_cliente(cliente &cli, FILE *f) {
 }
 
 // abre el archivo y baja todos los clientes del abb, luego cierra el archivo
-void bajar_abb_cliente(abb_clientes clientes, FILE *f) {
-    f = fopen(ARCHIVO_CLIENTES, "wb");
+void bajar_abb_cliente(abb_clientes clientes, string nombreArchivo) {
+
+    string fullpath;
+    copiar_string(fullpath, PATH);
+    concatenar_string(fullpath, nombreArchivo);
+
+    FILE *f = fopen(fullpath, "wb");
 
     bajar_abb_cliente_aux(clientes, f);
 
@@ -66,8 +71,13 @@ void bajar_abb_cliente_aux(abb_clientes clientes, FILE *f) {
 }
 
 // abre el archivo, obtiene todos los clientes y luego lo cierra
-void levantar_abb_cliente(abb_clientes &clientes, FILE *f) {
-    f = fopen(ARCHIVO_CLIENTES, "rb");
+void levantar_abb_cliente(abb_clientes &clientes, string nombreArchivo) {
+
+    string fullpath;
+    copiar_string(fullpath, PATH);
+    concatenar_string(fullpath, nombreArchivo);
+
+    FILE *f = fopen(fullpath, "rb");
     cliente buffer;
     levantar_cliente(buffer, f);
 
@@ -99,8 +109,13 @@ void levantar_producto(producto &prod, FILE *f) {
 }
 
 // abre el archivo y baja todos los productos del abb, luego cierra el archivo
-void bajar_abb_producto(abb_productos productos, FILE *f) {
-    f = fopen(ARCHIVO_PRODUCTOS, "wb");
+void bajar_abb_producto(abb_productos productos, string nombreArchivo) {
+
+    string fullpath;
+    copiar_string(fullpath, PATH);
+    concatenar_string(fullpath, nombreArchivo);
+
+    FILE *f = fopen(fullpath, "wb");
 
     bajar_abb_producto_aux(productos, f);
 
@@ -117,8 +132,13 @@ void bajar_abb_producto_aux(abb_productos productos, FILE *f) {
 }
 
 // abre el archivo, obtiene todos los productos y luego lo cierra
-void levantar_abb_producto(abb_productos &productos, FILE *f) {
-    f = fopen(ARCHIVO_PRODUCTOS, "rb");
+void levantar_abb_producto(abb_productos &productos, string nombreArchivo) {
+
+    string fullpath;
+    copiar_string(fullpath, PATH);
+    concatenar_string(fullpath, nombreArchivo);
+
+    FILE *f = fopen(fullpath, "rb");
     producto buffer;
     levantar_producto(buffer, f);
 

@@ -14,6 +14,58 @@ void listar_productos(abb_productos productos);
 void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err);
 
 int main() {
+
+    // abb de clientes
+/*    abb_clientes clientes;
+    crear_abb_clientes(clientes);
+
+    cliente cli;
+
+    cli.cedula = 34905341;
+    cli.nombre = "Peteco";
+
+    abb_insertar_cliente(clientes, cli);
+
+    // abb de productos
+    abb_productos productos;
+    crear_abb_productos(productos);
+
+//    if (existe_archivo("clientes.txt") == FALSE)
+//        bajar_abb_cliente(clientes, "clientes.txt");
+//
+//    if (existe_archivo("productos.txt") == FALSE)
+//        bajar_abb_producto(productos, "productos.txt");
+
+    bajar_abb_cliente(clientes, "clientes.dat");
+    bajar_abb_producto(productos, "productos.dat");
+
+    levantar_abb_cliente(clientes, "clientes.dat");
+*/
+/*
+    string prueba;
+    cargar_string(prueba);
+
+    boolean valido = validar_nombre_archivo(prueba);
+
+    if(valido) {
+        printf("\nEL NOMBRE DEL ARCHIVO ES CORRECTO\n");
+    } else {
+        printf("\nEL NOMBRE DEL ARCHIVO NO ES CORRECTO\n");
+    }
+
+    boolean existeArchivo = existe_archivo(prueba);
+
+    if(existeArchivo) {
+        printf("\nEL ARCHIVO EXISTE\n");
+    } else {
+        printf("\nEL ARCHIVO NO EXISTE\n");
+    }
+
+}
+*/
+
+    // crear los abb de clientes y productos
+
     // abb de clientes
     abb_clientes clientes;
     crear_abb_clientes(clientes);
@@ -28,6 +80,7 @@ int main() {
 
     //
     string usuario_string;
+
     arreglo_string parametros;
 
     // setea el tope a 0
@@ -103,6 +156,7 @@ int main() {
                     break;
 
                 case CREAR_FACTURA:
+
                     factura nueva_factura;
 
                     crear_factura(parametros, facturas, clientes, nueva_factura, error_obtenido);
@@ -133,6 +187,7 @@ int main() {
             }
         } else {
             printf("Comando invalido.");
+
         }
 
         borrar_arreglo_string(parametros);
