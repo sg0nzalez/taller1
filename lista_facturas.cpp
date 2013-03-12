@@ -4,16 +4,16 @@ void crear_lista_factura(lista_facturas &lista_fac) {
     lista_fac = NULL;
 }
 
-void lista_insertar_factura(lista_facturas &lista_fact, factura fact) {
-
+void lista_insertar_factura(lista_facturas &lista_fact, factura &fact, int numero_anterior) {
     if (lista_fact == NULL) {
         lista_fact = new nodo_factura;
 
+        fact.numero = numero_anterior + 1;
+
         lista_fact->fac = fact;
         lista_fact->sig_factura = NULL;
-    }
-    else {
-        lista_insertar_factura(lista_fact->sig_factura, fact);
+    } else {
+        lista_insertar_factura(lista_fact->sig_factura, fact, obtener_numero_factura(fact));
     }
 }
 

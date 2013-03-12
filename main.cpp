@@ -11,7 +11,7 @@ void crear_cliente(arreglo_string params, abb_clientes &clientes, error &err);
 void crear_producto(arreglo_string params, abb_productos &productos, error &err);
 void listar_clientes(abb_clientes clientes);
 void listar_productos(abb_productos productos);
-void crear_factura(arreglo_string params, lista_facturas &facturas, error &err);
+void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err);
 
 int main() {
     // abb de clientes
@@ -103,7 +103,23 @@ int main() {
                     break;
 
                 case CREAR_FACTURA:
-                    crear_factura(parametros, facturas, error_obtenido);
+                    factura nueva_factura;
+
+                    crear_factura(parametros, facturas, clientes, nueva_factura, error_obtenido);
+
+                    switch(error_obtenido) {
+                    case FORMATO_INCORRECTO:
+                        printf("Parametro con formato incorrecto.");
+                        break;
+                    case ERROR_DE_SINTAXIS:
+                        printf("Cantidad de parametros erronea.");
+                        break;
+                    case CEDULA_INEXISTENTE:
+                        printf("La cedula no existe en el sistema.");
+                        break;
+                    default:
+                        printf("Factura de Venta nro: %i creada.", obtener_numero_factura(nueva_factura));
+                    }
                     break;
                 case AGREGAR_LINEA:
                     printf("\nagregar linea\n");
@@ -225,6 +241,24 @@ void listar_productos(abb_productos productos) {
     }
 }
 
-void crear_factura(arreglo_string params, lista_facturas &facturas, error &err) {
+void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err) {
+    if (comparar_cant_params_por_comando(CREAR_FACTURA, params.tope) == TRUE) {
+        if (validar_formato_entero(params.arre[1]) == TRUE) {
+            arreglo_lineas lineas;
 
+            nueva_factura.cedula_cliente = atoi(params.arre[1]);
+            nueva_factura.estado_pendiente = TRUE;
+            nueva_factura.lineas_factura = lineas;
+
+            if (abb_existe_cliente(clientes, obtener_cedula_cliente_factura(nueva_factura)) == TRUE) {
+                lista_insertar_factura(facturas, nueva_factura, 0);
+            } else {
+                err = CEDULA_INEXISTENTE;
+            }
+        } else {
+            err = FORMATO_INCORRECTO;
+        }
+    } else {
+        err = ERROR_DE_SINTAXIS;
+    }
 }

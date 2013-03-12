@@ -286,7 +286,7 @@
 	"abb_clientes.h"
 	"arreglo_lineas.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\lista_facturas.h
+1363057024 \\psf\home\documents\projects\cprojects\taller1\lista_facturas.h
 	"factura.h"
 
 1361913593 \\psf\home\documents\projects\cprojects\taller1\factura.h
@@ -322,7 +322,7 @@
 	"linea.h"
 	"boolean.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\lista_facturas.cpp
+1363056609 source:\\psf\home\documents\projects\cprojects\taller1\lista_facturas.cpp
 	"lista_facturas.h"
 
 1363053664 source:\\psf\home\documents\projects\cprojects\taller1\parser.cpp

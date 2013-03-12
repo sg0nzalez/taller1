@@ -17,6 +17,6 @@ boolean existe_numero_factura(lista_facturas facturas, int numFactura);
 void crear_lista_factura(lista_facturas &lista);
 
 // inserta la factura dada en la lista de facturas dada
-void lista_insertar_factura(lista_facturas &facturas, factura fact);
+void lista_insertar_factura(lista_facturas &lista_fact, factura &fact, int numero_anterior);
 
 #endif // LISTA_FACTURAS_H_INCLUDED
