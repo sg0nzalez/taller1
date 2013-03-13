@@ -17,13 +17,13 @@ void agregar_linea_al_arreglo(arreglo_lineas &lineas, linea lin);
 boolean validar_cant_lineas(arreglo_lineas lineas);
 
 // devuelve el importe de la factura
-int importe_arreglo_lineas(arreglo_lineas lineas);
+float importe_arreglo_lineas(arreglo_lineas lineas);
 
 // devuelve el importe + el iva (importe total) de la factura
-int importe_total_arreglo_lineas(arreglo_lineas lineas);
+float importe_total_arreglo_lineas(arreglo_lineas lineas);
 
 // devuelve el iva de la factura
-int iva_arreglo_lineas(arreglo_lineas lineas);
+float iva_arreglo_lineas(arreglo_lineas lineas);
 
 // AGREGAR AL DOC
 // devuelve el tope del arreglo

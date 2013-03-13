@@ -487,15 +487,13 @@
 1363142764 \\psf\home\documents\projects\cprojects\taller1\factura.h
 	"arreglo_lineas.h"
 
-1363142485 \\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.h
+1363146004 \\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.h
 	"linea.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\linea.h
-	"arreglo_string.h"
-	"arreglo_string.h"
+1363145921 \\psf\home\documents\projects\cprojects\taller1\linea.h
 	"arreglo_string.h"
 
-1363142483 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.cpp
+1363145996 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.cpp
 	"arreglo_lineas.h"
 
 1363144684 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_string.cpp
@@ -521,7 +519,7 @@
 1363142825 source:\\psf\home\documents\projects\cprojects\taller1\factura.cpp
 	"factura.h"
 
-1363145438 source:\\psf\home\documents\projects\cprojects\taller1\linea.cpp
+1363145913 source:\\psf\home\documents\projects\cprojects\taller1\linea.cpp
 	"linea.h"
 	"boolean.h"
 
@@ -579,7 +577,7 @@
 
 1363049885 ependency file v1.0
 
-1363142222 source:\\psf\home\documents\projects\cprojects\taller1\main.cpp
+1363145655 source:\\psf\home\documents\projects\cprojects\taller1\main.cpp
 	<cstdlib>
 	"parser.h"
 	"archivos.h"

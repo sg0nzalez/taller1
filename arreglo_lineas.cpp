@@ -9,8 +9,8 @@ boolean validar_cant_lineas(arreglo_lineas arre_lineas) {
     return boolean(arre_lineas.tope < 10);
 }
 
-int importe_arreglo_lineas(arreglo_lineas arre_lineas) {
-    int resultado = 0;
+float importe_arreglo_lineas(arreglo_lineas arre_lineas) {
+    float resultado = 0;
 
     for(int i = 0; i < arre_lineas.tope; i++) {
         resultado += importe_linea(arre_lineas.lineas[i]);
@@ -19,8 +19,8 @@ int importe_arreglo_lineas(arreglo_lineas arre_lineas) {
     return resultado;
 }
 
-int importe_total_arreglo_lineas(arreglo_lineas arre_lineas) {
-    int resultado = 0;
+float importe_total_arreglo_lineas(arreglo_lineas arre_lineas) {
+    float resultado = 0;
 
     for(int i = 0; i < arre_lineas.tope; i++) {
         resultado += importe_total_linea(arre_lineas.lineas[i]);
@@ -29,8 +29,8 @@ int importe_total_arreglo_lineas(arreglo_lineas arre_lineas) {
     return resultado;
 }
 
-int iva_arreglo_lineas(arreglo_lineas arre_lineas) {
-    int resultado = 0;
+float iva_arreglo_lineas(arreglo_lineas arre_lineas) {
+    float resultado = 0;
 
     for(int i = 0; i < arre_lineas.tope; i++) {
         resultado += iva_linea(arre_lineas.lineas[i]);

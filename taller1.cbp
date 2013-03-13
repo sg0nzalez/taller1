@@ -5,6 +5,7 @@
 		<Option title="taller1" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Tests\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/taller1" prefix_auto="1" extension_auto="1" />
@@ -63,19 +64,42 @@
 		<Unit filename="producto.h" />
 		<Unit filename="string.cpp" />
 		<Unit filename="string.h" />
-		<Unit filename="test_abb_clientes.cpp" />
-		<Unit filename="test_abb_productos.cpp" />
-		<Unit filename="test_arreglo_lineas.cpp" />
-		<Unit filename="test_arreglo_string.cpp" />
-		<Unit filename="test_boolean.cpp" />
-		<Unit filename="test_cliente.cpp" />
-		<Unit filename="test_errores.cpp" />
-		<Unit filename="test_factura.cpp" />
-		<Unit filename="test_linea.cpp" />
-		<Unit filename="test_lista_facturas.cpp" />
-		<Unit filename="test_producto.cpp" />
-		<Unit filename="test_producto.h" />
-		<Unit filename="test_string.cpp" />
+		<Unit filename="test_abb_clientes.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_abb_productos.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_arreglo_lineas.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_arreglo_string.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_boolean.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_cliente.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_errores.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_factura.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_linea.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_lista_facturas.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_producto.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
+		<Unit filename="test_string.cpp">
+			<Option virtualFolder="Tests/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

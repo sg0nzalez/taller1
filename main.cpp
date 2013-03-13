@@ -14,6 +14,7 @@ void listar_productos(abb_productos productos);
 void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err);
 void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, abb_productos productos, error &err);
 void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_productos productos, abb_clientes clientes, error &err);
+void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, error &err);
 
 int main() {
     // crear los abb de clientes y productos
@@ -153,6 +154,9 @@ int main() {
                     case FACTURA_INEXISTENTE:
                         printf("La factura ingresada no exitse.");
                         break;
+                    case FACTURA_CONFIRMADA:
+                        printf("La factura ingresada esta confirmada.");
+                        break;
                     default:
                         printf("Linea agregada a Factura de Venta nro: %i.", obtener_numero_factura(nueva_factura));
                     }
@@ -173,7 +177,22 @@ int main() {
                     }
                     break;
                 case CONFIRMAR_FACTURA:
-                    printf("\nconfirmar factura\n");
+                    factura factura_a_confirmar;
+                    confirmar_factura(parametros, facturas, factura_a_confirmar, error_obtenido);
+
+                    switch(error_obtenido) {
+                    case FORMATO_INCORRECTO:
+                        printf("Parametro con formato incorrecto.");
+                        break;
+                    case ERROR_DE_SINTAXIS:
+                        printf("Cantidad de parametros erronea.");
+                        break;
+                    case FACTURA_INEXISTENTE:
+                        printf("La factura no existe en el sistema.");
+                        break;
+                    default:
+                        printf("Factura de Venta nro: %i confirmada.", obtener_numero_factura(factura_a_confirmar));
+                    }
                     break;
                 case LOAD:
                     printf("\nload\n");
@@ -400,7 +419,7 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
                 }
 
                 printf("\n%-5s%-10s%-20s%-10s%-10s%-10s%-10s\n", "Cant", "Codigo", "Producto", "Unitario", "Importe", "IVA", "Total");
-                printf("------------------------------------------------------------------------");
+                printf("-----------------------------------------------------------------------------");
 
                 for (int i = 0; i < obtener_arreglo_lineas_tope(factura_asociada.lineas_factura); i++) {
                     linea linea_actual = factura_asociada.lineas_factura.lineas[i];
@@ -409,7 +428,7 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
 
                     obtener_nombre_producto(producto_linea, nombre_producto);
 
-                    printf("\n%-5i%-10i%-20s%-10i%-10f%-10f%-10f\n",
+                    printf("\n%-5i%-10i%-20s%-10i$%-10f$%-10f$%-10f\n",
                            obtener_cantidad_productos_linea(linea_actual),
                            obtener_codigo_producto_linea(linea_actual),
                            nombre_producto,
@@ -421,6 +440,30 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
                     destruir_string(nombre_producto);
                 }
 
+                printf("Importe: $%f\n", importe_arreglo_lineas(factura_asociada.lineas_factura));
+                printf("IVA: $%f\n", iva_arreglo_lineas(factura_asociada.lineas_factura));
+                printf("Total: $%f", importe_total_arreglo_lineas(factura_asociada.lineas_factura));
+            } else {
+                err = FACTURA_INEXISTENTE;
+            }
+        } else {
+            err = FORMATO_INCORRECTO;
+        }
+    } else {
+        err = ERROR_DE_SINTAXIS;
+    }
+}
+
+void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, error &err) {
+    if (comparar_cant_params_por_comando(DESPLEGAR_FACTURA, params.tope) == TRUE) {
+        if (validar_formato_entero(params.arre[1]) == TRUE) {
+            int numero_factura = atoi(params.arre[1]);
+
+            if (existe_numero_factura(facturas, numero_factura) == TRUE) {
+                factura_asociada = obtener_factura(facturas, numero_factura);
+                factura_asociada.estado_pendiente = FALSE;
+
+                modificar_factura(facturas, factura_asociada);
             } else {
                 err = FACTURA_INEXISTENTE;
             }
