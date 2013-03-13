@@ -498,7 +498,7 @@
 1363142483 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.cpp
 	"arreglo_lineas.h"
 
-1363140006 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_string.cpp
+1363144684 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_string.cpp
 	"arreglo_string.h"
 
 1361565626 source:\\psf\home\documents\projects\cprojects\taller1\boolean.cpp
@@ -521,11 +521,7 @@
 1363142825 source:\\psf\home\documents\projects\cprojects\taller1\factura.cpp
 	"factura.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\linea.cpp
-	"linea.h"
-	"boolean.h"
-	"linea.h"
-	"boolean.h"
+1363145438 source:\\psf\home\documents\projects\cprojects\taller1\linea.cpp
 	"linea.h"
 	"boolean.h"
 
@@ -578,7 +574,7 @@
 
 1363131162 source:\\psf\home\documents\projects\cprojects\taller1\test_string.cpp
 
-1363131615 source:\\psf\home\documents\projects\cprojects\taller1\comando.cpp
+1363144585 source:\\psf\home\documents\projects\cprojects\taller1\comando.cpp
 	"comando.h"
 
 1363049885 ependency file v1.0

@@ -398,6 +398,29 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
                 } else {
                     printf("Estado: Confirmada");
                 }
+
+                printf("\n%-5s%-10s%-20s%-10s%-10s%-10s%-10s\n", "Cant", "Codigo", "Producto", "Unitario", "Importe", "IVA", "Total");
+                printf("------------------------------------------------------------------------");
+
+                for (int i = 0; i < obtener_arreglo_lineas_tope(factura_asociada.lineas_factura); i++) {
+                    linea linea_actual = factura_asociada.lineas_factura.lineas[i];
+                    producto producto_linea = abb_buscar_producto(productos, linea_actual.codigo_producto);
+                    string nombre_producto;
+
+                    obtener_nombre_producto(producto_linea, nombre_producto);
+
+                    printf("\n%-5i%-10i%-20s%-10i%-10f%-10f%-10f\n",
+                           obtener_cantidad_productos_linea(linea_actual),
+                           obtener_codigo_producto_linea(linea_actual),
+                           nombre_producto,
+                           obtener_precio_unitario_linea(linea_actual),
+                           importe_linea(linea_actual),
+                           iva_linea(linea_actual),
+                           importe_total_linea(linea_actual));
+
+                    destruir_string(nombre_producto);
+                }
+
             } else {
                 err = FACTURA_INEXISTENTE;
             }
