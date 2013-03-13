@@ -17,6 +17,27 @@ void lista_insertar_factura(lista_facturas &lista_fact, factura &fact, int numer
     }
 }
 
+void modificar_factura(lista_facturas &lista_fact, factura factura_modificada) {
+    if (lista_fact != NULL) {
+        if (obtener_numero_factura(lista_fact->fac) == obtener_numero_factura(factura_modificada)) {
+            lista_fact->fac = factura_modificada;
+        } else {
+            modificar_factura(lista_fact->sig_factura, factura_modificada);
+        }
+    }
+}
+
+factura obtener_factura(lista_facturas facturas, int numFactura) {
+    lista_facturas aux = facturas;
+
+    while (aux != NULL) {
+        if (aux->fac.numero == numFactura)
+            return aux->fac;
+
+        aux = aux->sig_factura;
+    }
+}
+
 boolean existe_numero_factura(lista_facturas facturas, int numFactura) {
     lista_facturas aux = facturas;
 

@@ -12,58 +12,10 @@ void crear_producto(arreglo_string params, abb_productos &productos, error &err)
 void listar_clientes(abb_clientes clientes);
 void listar_productos(abb_productos productos);
 void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err);
+void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, abb_productos productos, error &err);
+void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_productos productos, abb_clientes clientes, error &err);
 
 int main() {
-
-    // abb de clientes
-/*    abb_clientes clientes;
-    crear_abb_clientes(clientes);
-
-    cliente cli;
-
-    cli.cedula = 34905341;
-    cli.nombre = "Peteco";
-
-    abb_insertar_cliente(clientes, cli);
-
-    // abb de productos
-    abb_productos productos;
-    crear_abb_productos(productos);
-
-//    if (existe_archivo("clientes.txt") == FALSE)
-//        bajar_abb_cliente(clientes, "clientes.txt");
-//
-//    if (existe_archivo("productos.txt") == FALSE)
-//        bajar_abb_producto(productos, "productos.txt");
-
-    bajar_abb_cliente(clientes, "clientes.dat");
-    bajar_abb_producto(productos, "productos.dat");
-
-    levantar_abb_cliente(clientes, "clientes.dat");
-*/
-/*
-    string prueba;
-    cargar_string(prueba);
-
-    boolean valido = validar_nombre_archivo(prueba);
-
-    if(valido) {
-        printf("\nEL NOMBRE DEL ARCHIVO ES CORRECTO\n");
-    } else {
-        printf("\nEL NOMBRE DEL ARCHIVO NO ES CORRECTO\n");
-    }
-
-    boolean existeArchivo = existe_archivo(prueba);
-
-    if(existeArchivo) {
-        printf("\nEL ARCHIVO EXISTE\n");
-    } else {
-        printf("\nEL ARCHIVO NO EXISTE\n");
-    }
-
-}
-*/
-
     // crear los abb de clientes y productos
 
     // abb de clientes
@@ -156,7 +108,6 @@ int main() {
                     break;
 
                 case CREAR_FACTURA:
-
                     factura nueva_factura;
 
                     crear_factura(parametros, facturas, clientes, nueva_factura, error_obtenido);
@@ -176,7 +127,50 @@ int main() {
                     }
                     break;
                 case AGREGAR_LINEA:
-                    printf("\nagregar linea\n");
+                    factura factura_asociada;
+
+                    crear_linea(parametros, facturas, factura_asociada, productos, error_obtenido);
+
+                    switch(error_obtenido) {
+                    case FORMATO_INCORRECTO:
+                        printf("Parametro con formato incorrecto.");
+                        break;
+                    case ERROR_DE_SINTAXIS:
+                        printf("Cantidad de parametros erronea.");
+                        break;
+                    case CEDULA_INEXISTENTE:
+                        printf("La cedula no existe en el sistema.");
+                        break;
+                    case FACTURA_CANT_LINEAS_ERROR:
+                        printf("Se llego al limite de lineas(10).");
+                        break;
+                    case ENTERO_INVALIDO:
+                        printf("Precio y Cantidad deben ser positivos.");
+                        break;
+                    case CODIGO_INEXISTENTE:
+                        printf("No exitse un producto con el codigo ingresado.");
+                        break;
+                    case FACTURA_INEXISTENTE:
+                        printf("La factura ingresada no exitse.");
+                        break;
+                    default:
+                        printf("Linea agregada a Factura de Venta nro: %i.", obtener_numero_factura(nueva_factura));
+                    }
+                    break;
+                case DESPLEGAR_FACTURA:
+                    desplegar_factura(parametros, facturas, productos, clientes, error_obtenido);
+
+                    switch(error_obtenido) {
+                    case FORMATO_INCORRECTO:
+                        printf("Parametro con formato incorrecto.");
+                        break;
+                    case ERROR_DE_SINTAXIS:
+                        printf("Cantidad de parametros erronea.");
+                        break;
+                    case FACTURA_INEXISTENTE:
+                        printf("La factura no existe en el sistema.");
+                        break;
+                    }
                     break;
                 case CONFIRMAR_FACTURA:
                     printf("\nconfirmar factura\n");
@@ -198,7 +192,7 @@ int main() {
         parsear_comando(usuario_string, parametros, comando_obtenido, error_obtenido);
     }
 
-    printf("ADIOS :D");
+    printf("Hasta la proxima.");
 }
 
 // parametros
@@ -300,6 +294,7 @@ void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes
     if (comparar_cant_params_por_comando(CREAR_FACTURA, params.tope) == TRUE) {
         if (validar_formato_entero(params.arre[1]) == TRUE) {
             arreglo_lineas lineas;
+            lineas.tope = 0;
 
             nueva_factura.cedula_cliente = atoi(params.arre[1]);
             nueva_factura.estado_pendiente = TRUE;
@@ -309,6 +304,102 @@ void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes
                 lista_insertar_factura(facturas, nueva_factura, 0);
             } else {
                 err = CEDULA_INEXISTENTE;
+            }
+        } else {
+            err = FORMATO_INCORRECTO;
+        }
+    } else {
+        err = ERROR_DE_SINTAXIS;
+    }
+}
+
+// parametros
+//   [0] = comando
+//   [1] = numero factura
+//   [2] = numero producto
+//   [3] = cantidad producto
+//   [4] = precio unitario
+void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, abb_productos productos, error &err) {
+    if (comparar_cant_params_por_comando(AGREGAR_LINEA, params.tope) == TRUE) {
+        if (validar_formato_entero(params.arre[1]) == TRUE &&
+            validar_formato_entero(params.arre[2]) == TRUE &&
+            validar_formato_entero(params.arre[3]) == TRUE &&
+            validar_formato_entero(params.arre[4]) == TRUE) {
+
+            int numero_factura = atoi(params.arre[1]);
+            int numero_producto = atoi(params.arre[2]);
+            int cantidad_productos = atoi(params.arre[3]);
+            int precio_producto = atoi(params.arre[4]);
+
+            if (existe_numero_factura(facturas, numero_factura) == TRUE) {
+                factura_asociada = obtener_factura(facturas, numero_factura);
+
+                if (abb_existe_codigo(productos, numero_producto) == TRUE) {
+                    if (validar_precio(precio_producto) == TRUE &&
+                        validar_cantidad_productos(cantidad_productos) == TRUE) {
+                        arreglo_lineas lineas;
+                        obtener_arreglo_lineas_factura(factura_asociada, lineas);
+
+                        if (obtener_arreglo_lineas_tope(lineas) < 10) {
+                            if (obtener_estado_factura(factura_asociada) == TRUE) {
+                                linea nueva_linea;
+
+                                nueva_linea.cant_productos = cantidad_productos;
+                                nueva_linea.codigo_producto = numero_producto;
+                                nueva_linea.precio_unitario = precio_producto;
+
+                                agregar_linea_al_arreglo(lineas, nueva_linea);
+                                modificar_arreglo_lineas_factura(factura_asociada, lineas);
+
+                                modificar_factura(facturas, factura_asociada);
+                            } else {
+                                err = FACTURA_CONFIRMADA;
+                            }
+                        } else {
+                            err = FACTURA_CANT_LINEAS_ERROR;
+                        }
+                    } else {
+                        err = ENTERO_INVALIDO;
+                    }
+                } else {
+                    err = CODIGO_INEXISTENTE;
+                }
+            } else {
+                err = FACTURA_INEXISTENTE;
+            }
+        } else {
+            err = FORMATO_INCORRECTO;
+        }
+    } else {
+        err = ERROR_DE_SINTAXIS;
+    }
+}
+
+void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_productos productos, abb_clientes clientes, error &err) {
+    if (comparar_cant_params_por_comando(DESPLEGAR_FACTURA, params.tope) == TRUE) {
+        if (validar_formato_entero(params.arre[1]) == TRUE) {
+            int numero_factura = atoi(params.arre[1]);
+
+            if (existe_numero_factura(facturas, numero_factura) == TRUE) {
+                factura factura_asociada = obtener_factura(facturas, numero_factura);
+                cliente factura_cliente = abb_buscar_cliente(clientes, obtener_cedula_cliente_factura(factura_asociada));
+
+                printf("Factura Venta nro: %i\n", obtener_numero_factura(factura_asociada));
+
+                printf("Cliente: %i - ", obtener_cedula_cliente(factura_cliente));
+
+                string nombre_cliente;
+                obtener_nombre_cliente(factura_cliente, nombre_cliente);
+                desplegar_string(nombre_cliente);
+                printf("\n");
+
+                if (obtener_estado_factura(factura_asociada) == TRUE) {
+                    printf("Estado: Pendiente");
+                } else {
+                    printf("Estado: Confirmada");
+                }
+            } else {
+                err = FACTURA_INEXISTENTE;
             }
         } else {
             err = FORMATO_INCORRECTO;

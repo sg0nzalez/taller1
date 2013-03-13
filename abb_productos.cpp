@@ -7,8 +7,6 @@ void crear_abb_productos(abb_productos &productos)
     productos = NULL;
 }
 
-
-
 // inserta el producto dado en el abb de productos
 void abb_insertar_producto(abb_productos &productos, producto prod) {
     if (productos == NULL) {
@@ -25,10 +23,7 @@ void abb_insertar_producto(abb_productos &productos, producto prod) {
     }
 }
 
-
-
-
-  // precondicion: el codigo debe ser valido
+// precondicion: el codigo debe ser valido
 //
 // devuelve el producto con el codigo dado si existe alguno
  producto abb_buscar_producto(abb_productos productos, int codigo)

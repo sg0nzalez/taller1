@@ -15,6 +15,9 @@ boolean comparar_cant_params_por_comando(comando com, int cant_param) {
         (com == LISTAR_CLIENTES && cant_param != 1) ||
         (com == LISTAR_PRODUCTOS && cant_param != 1) ||
         (com == CREAR_FACTURA && cant_param != 2) ||
+        (com == AGREGAR_LINEA && cant_param != 5) ||
+        (com == DESPLEGAR_FACTURA && cant_param != 2) ||
+        (com == CONFIRMAR_FACTURA && cant_param != 2) ||
         (com == LOAD && cant_param != 1) ||
         (com == EXIT && cant_param != 1)) {
         return FALSE;
@@ -68,6 +71,8 @@ void obtener_comando(string comando_string, comando &com, error &err) {
         com = CREAR_FACTURA;
     } else if (comparar_2_strings(comando_string, "agregarlinea") == TRUE) {
         com = AGREGAR_LINEA;
+    } else if (comparar_2_strings(comando_string, "desplegarfactura") == TRUE) {
+        com = DESPLEGAR_FACTURA;
     } else if (comparar_2_strings(comando_string, "confirmarfactura") == TRUE) {
         com = CONFIRMAR_FACTURA;
     } else if (comparar_2_strings(comando_string, "load") == TRUE) {

@@ -13,6 +13,13 @@ typedef nodo_factura *lista_facturas;
 // devuelve true si el c˜digo dado ya esta ingresado en la lista de facturas
 boolean existe_numero_factura(lista_facturas facturas, int numFactura);
 
+void modificar_factura(lista_facturas &lista_fact, factura factura_modificada);
+
+// precondicion: existe la factura
+//
+// retorna la factura asociada al numero dado
+factura obtener_factura(lista_facturas facturas, int numFactura);
+
 // crea una nueva lista
 void crear_lista_factura(lista_facturas &lista);
 
