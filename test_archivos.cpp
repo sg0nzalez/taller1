@@ -54,6 +54,14 @@
         printf("\nEL ARCHIVO NO EXISTE\n");
     }
 
+    boolean valido = validar_nombre_archivo("prodCli.dat");
+
+    if(valido) {
+        printf("\nEL NOMBRE DEL ARCHIVO ES CORRECTO\n");
+    } else {
+        printf("\nEL NOMBRE DEL ARCHIVO NO ES CORRECTO\n");
+    }
+
     printf("\nCLIENTES\n");
     listar_clientes(clientes);
     printf("\n\nPRODUCTOS\n");

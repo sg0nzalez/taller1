@@ -43,8 +43,10 @@ void bajar_string(string str, FILE *f);
 // este en la posicion del puntero en el archivo dado
 void levantar_string(string &str, FILE *f);
 
+// baja a archivo los clientes y los productos
 void bajar_abb(abb_clientes clientes, abb_productos, string nombreArchivo);
 
+// levanta desde archivo los clientes y los productos
 void levantar_abb(abb_clientes &clientes, abb_productos &productos, string nombreArchivo);
 
 #endif // ARCHIVOS_H_INCLUDED

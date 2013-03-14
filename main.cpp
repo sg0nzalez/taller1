@@ -15,100 +15,19 @@ void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes
 void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, abb_productos productos, error &err);
 void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_productos productos, abb_clientes clientes, error &err);
 void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, error &err);
+void guardar_archivo(arreglo_string params, abb_clientes clientes, abb_productos productos, error &err);
+void cargar_archivo(arreglo_string params, abb_clientes clientes, abb_productos productos, error &err);
 
 int main() {
-
-    // abb de clientes
-    abb_clientes clientes;
-    abb_clientes clientes2;
-    crear_abb_clientes(clientes);
-    crear_abb_clientes(clientes2);
-
-    // abb de productos
-    abb_productos productos;
-    abb_productos productos2;
-    crear_abb_productos(productos);
-    crear_abb_productos(productos2);
-
-    cliente cli;
-    cliente cli2;
-    cliente cli3;
-
-    producto prod;
-    producto prod2;
-    producto prod3;
-
-    cli.cedula = 34905341;
-    cli.nombre = "Tony_the_Fat";
-
-    cli2.cedula = 234566781;
-    cli2.nombre = "Enzo";
-
-    cli3.cedula = 12345555;
-    cli3.nombre = "Peteco_Carbajal";
-
-    prod.codigo = 1;
-    prod.nombre = "Bombones Garoto";
-
-    prod2.codigo = 2;
-    prod2.nombre = "Chicles";
-
-    prod3.codigo = 3;
-    prod3.nombre = "Caramelos";
-
-    abb_insertar_cliente(clientes2, cli);
-    abb_insertar_cliente(clientes2, cli2);
-    abb_insertar_cliente(clientes2, cli3);
-
-    abb_insertar_producto(productos2, prod);
-    abb_insertar_producto(productos2, prod2);
-    abb_insertar_producto(productos2, prod3);
-
-    bajar_abb(clientes2, productos2, "prodCli.dat");
-    levantar_abb(clientes, productos, "prodCli.dat");
-
-//        bajar_abb_cliente(clientes, "clientes.txt");
-//
-//    if (existe_archivo("productos.txt") == FALSE)
-//        bajar_abb_producto(productos, "productos.txt");
-
-//    bajar_abb_cliente(clientes, "clientes.dat");
-//    bajar_abb_producto(productos, "productos.dat");
-//
-//    levantar_abb_cliente(clientes2, "clientes.dat");
-
-/*
-    string prueba;
-    cargar_string(prueba);
-
-    boolean valido = validar_nombre_archivo(prueba);
-
-    if(valido) {
-        printf("\nEL NOMBRE DEL ARCHIVO ES CORRECTO\n");
-    } else {
-        printf("\nEL NOMBRE DEL ARCHIVO NO ES CORRECTO\n");
-    }
-
-    boolean existeArchivo = existe_archivo(prueba);
-
-    if(existeArchivo) {
-        printf("\nEL ARCHIVO EXISTE\n");
-    } else {
-        printf("\nEL ARCHIVO NO EXISTE\n");
-    }
-
-}
-*/
-
     // crear los abb de clientes y productos
 
     // abb de clientes
-//    abb_clientes clientes;
-//    crear_abb_clientes(clientes);
-//
-//    // abb de productos
-//    abb_productos productos;
-//    crear_abb_productos(productos);
+    abb_clientes clientes;
+    crear_abb_clientes(clientes);
+
+    // abb de productos
+    abb_productos productos;
+    crear_abb_productos(productos);
 
     // lista de facturas
     lista_facturas facturas;
@@ -277,8 +196,36 @@ int main() {
                         printf("Factura de Venta nro: %i confirmada.", obtener_numero_factura(factura_a_confirmar));
                     }
                     break;
+                case SAVE:
+                    guardar_archivo(parametros, clientes, productos, error_obtenido);
+
+                    switch(error_obtenido) {
+                        case ERROR_DE_SINTAXIS:
+                            printf("Cantidad de parametros erronea.");
+                            break;
+                        case FORMATO_INCORRECTO:
+                            printf("Parametro con formato incorrecto.");
+                        break;
+                        default:
+                            printf("Archivo guardado exitosamente");
+                    }
+                    break;
                 case LOAD:
-                    printf("\nload\n");
+                    cargar_archivo(parametros, clientes, productos, error_obtenido);
+
+                    switch(error_obtenido) {
+                        case ERROR_DE_SINTAXIS:
+                            printf("Cantidad de parametros erronea.");
+                            break;
+                        case ARCHIVO_INEXISTENTE:
+                            printf("El archivo no existe en el sistema.");
+                            break;
+                        case FORMATO_INCORRECTO:
+                            printf("Parametro con formato incorrecto.");
+                            break;
+                        default:
+                            printf("Archivo cargado exitosamente");
+                    }
                     break;
             }
         } else {
@@ -549,6 +496,37 @@ void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura 
                 modificar_factura(facturas, factura_asociada);
             } else {
                 err = FACTURA_INEXISTENTE;
+            }
+        } else {
+            err = FORMATO_INCORRECTO;
+        }
+    } else {
+        err = ERROR_DE_SINTAXIS;
+    }
+}
+
+void guardar_archivo(arreglo_string params, abb_clientes clientes, abb_productos productos, error &err) {
+    if (comparar_cant_params_por_comando(SAVE, params.tope) == TRUE) {
+        if(validar_nombre_archivo(params.arre[1]) == TRUE) {
+            bajar_abb(clientes, productos, params.arre[1]);
+        } else {
+            err = FORMATO_INCORRECTO;
+        }
+    } else {
+        err = ERROR_DE_SINTAXIS;
+    }
+}
+
+void cargar_archivo(arreglo_string params, abb_clientes clientes, abb_productos productos, error &err) {
+    if (comparar_cant_params_por_comando(LOAD, params.tope) == TRUE) {
+        if(validar_nombre_archivo(params.arre[1]) == TRUE) {
+            if(existe_archivo(params.arre[1]) == TRUE) {
+                crear_abb_clientes(clientes);
+                crear_abb_productos(productos);
+
+                levantar_abb(clientes, productos, params.arre[1]);
+            } else {
+                err = ARCHIVO_INEXISTENTE;
             }
         } else {
             err = FORMATO_INCORRECTO;
