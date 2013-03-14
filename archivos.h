@@ -22,14 +22,8 @@ void bajar_cliente(cliente cli, FILE *f);
 // lo guarda en el cliente dado
 void levantar_cliente(cliente &clie, FILE *f);
 
-// abre el archivo y baja todos los clientes del abb, luego cierra el archivo
-void bajar_abb_cliente(abb_clientes clientes, string nombreArchivo);
-
 // recursivamente va bajando cliente por cliente
 void bajar_abb_cliente_aux(abb_clientes clientes, FILE *f);
-
-// abre el archivo, obtiene todos los clientes y luego lo cierra
-void levantar_abb_cliente(abb_clientes &clientes, string nombreArchivo);
 
 // dado un producto y un FILE, guarda dicho producto en el archivo dado
 void bajar_producto(producto prod, FILE *f);
@@ -39,14 +33,8 @@ void bajar_producto(producto prod, FILE *f);
 // lo guarda en el producto dado
 void levantar_producto(producto &prod, FILE *f);
 
-// abre el archivo y baja todos los productos del abb, luego cierra el archivo
-void bajar_abb_producto(abb_productos productos, string nombreArchivo);
-
 // recursivamente va bajando producto por producto
 void bajar_abb_producto_aux(abb_productos productos, FILE *f);
-
-// abre el archivo, obtiene todos los productos y luego lo cierra
-void levantar_abb_producto(abb_productos &productos, string nombreArchivo);
 
 // dado un string y un FILE, guarda dicho string en el archivo dado
 void bajar_string(string str, FILE *f);
@@ -55,5 +43,8 @@ void bajar_string(string str, FILE *f);
 // este en la posicion del puntero en el archivo dado
 void levantar_string(string &str, FILE *f);
 
+void bajar_abb(abb_clientes clientes, abb_productos, string nombreArchivo);
+
+void levantar_abb(abb_clientes &clientes, abb_productos &productos, string nombreArchivo);
 
 #endif // ARCHIVOS_H_INCLUDED

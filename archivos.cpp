@@ -5,32 +5,38 @@ boolean validar_nombre_archivo(string nombre_archivo) {
 
     int largo_str = largo_string(nombre_archivo) - 1;
 
-    boolean esValido = FALSE;
+    boolean es_valido = FALSE;
 
     if(nombre_archivo[largo_str-3]=='.' && nombre_archivo[largo_str-2]=='d' &&
        nombre_archivo[largo_str-1]=='a' && nombre_archivo[largo_str]=='t'){
-        esValido = TRUE;
+        es_valido = TRUE;
     }
 
-    return esValido;
+    return es_valido;
 }
 
 // devuelve true si el nombre del archivo dado ya existe en nuestro disco
 boolean existe_archivo(string nombre_archivo) {
-    boolean existeArchivo = TRUE;
+    boolean existe = TRUE;
 
-    FILE *f = fopen(nombre_archivo, "rb");
+    string fullpath;
+    copiar_string(fullpath, PATH);
+    concatenar_string(fullpath, nombre_archivo);
+
+    FILE *f = fopen(fullpath, "rb");
 
     if (f == NULL)
-        existeArchivo = FALSE;
+        existe = FALSE;
 
-    fclose(f);
+    if(existe)
+        fclose(f);
 
-    return existeArchivo;
+    return existe;
 }
 
 // dado un cliente y un FILE, guarda dicho cliente en el archivo dado
 void bajar_cliente(cliente cli, FILE *f) {
+
     fwrite(&cli.cedula, sizeof(long int), 1, f);
 
     bajar_string(cli.nombre, f);
@@ -40,24 +46,11 @@ void bajar_cliente(cliente cli, FILE *f) {
 // en la posicion actual del puntero dentro del archivo y dicho cliente
 // lo guarda en el cliente dado
 void levantar_cliente(cliente &cli, FILE *f) {
+
     fread (&cli.cedula, sizeof(long int), 1, f);
 
     crear_string(cli.nombre);
     levantar_string(cli.nombre, f);
-}
-
-// abre el archivo y baja todos los clientes del abb, luego cierra el archivo
-void bajar_abb_cliente(abb_clientes clientes, string nombreArchivo) {
-
-    string fullpath;
-    copiar_string(fullpath, PATH);
-    concatenar_string(fullpath, nombreArchivo);
-
-    FILE *f = fopen(fullpath, "wb");
-
-    bajar_abb_cliente_aux(clientes, f);
-
-    fclose(f);
 }
 
 // recursivamente va bajando cliente por cliente
@@ -70,23 +63,64 @@ void bajar_abb_cliente_aux(abb_clientes clientes, FILE *f) {
     }
 }
 
-// abre el archivo, obtiene todos los clientes y luego lo cierra
-void levantar_abb_cliente(abb_clientes &clientes, string nombreArchivo) {
+void levantar_abb(abb_clientes &clientes, abb_productos &productos, string nombre_archivo) {
 
     string fullpath;
     copiar_string(fullpath, PATH);
-    concatenar_string(fullpath, nombreArchivo);
+    concatenar_string(fullpath, nombre_archivo);
+
+    int cantidad_productos = 3;
+    int cantidad_clientes = 1;
 
     FILE *f = fopen(fullpath, "rb");
-    cliente buffer;
-    levantar_cliente(buffer, f);
 
-    while (!feof(f))
-    {
-        abb_insertar_cliente(clientes, buffer);
+    boolean termine = FALSE;
 
-        levantar_cliente(buffer, f);
+    cliente buffer_cliente;
+    producto buffer_producto;
+
+    levantar_cliente(buffer_cliente, f);
+
+    if(obtener_cedula_cliente(buffer_cliente)==-1)
+        termine = TRUE;
+
+    while(!termine) {
+
+        abb_insertar_cliente(clientes, buffer_cliente);
+
+        levantar_cliente(buffer_cliente, f);
+
+        if(obtener_cedula_cliente(buffer_cliente)==-1)
+            termine = TRUE;
     }
+
+    levantar_producto(buffer_producto, f);
+
+    while (!feof(f)) {
+
+        abb_insertar_producto(productos, buffer_producto);
+
+        levantar_producto(buffer_producto, f);
+    }
+
+    fclose(f);
+}
+
+void bajar_abb(abb_clientes clientes, abb_productos productos, string nombre_archivo) {
+
+    string fullpath;
+    copiar_string(fullpath, PATH);
+    concatenar_string(fullpath, nombre_archivo);
+
+    cliente cliente_ficticio;
+    modificar_cedula_cliente(cliente_ficticio, -1);
+    modificar_nombre_cliente(cliente_ficticio, "\0");
+
+    FILE *f = fopen(fullpath, "wb");
+
+    bajar_abb_cliente_aux(clientes, f);
+    bajar_cliente(cliente_ficticio, f);
+    bajar_abb_producto_aux(productos, f);
 
     fclose(f);
 }
@@ -108,20 +142,6 @@ void levantar_producto(producto &prod, FILE *f) {
     levantar_string(prod.nombre, f);
 }
 
-// abre el archivo y baja todos los productos del abb, luego cierra el archivo
-void bajar_abb_producto(abb_productos productos, string nombreArchivo) {
-
-    string fullpath;
-    copiar_string(fullpath, PATH);
-    concatenar_string(fullpath, nombreArchivo);
-
-    FILE *f = fopen(fullpath, "wb");
-
-    bajar_abb_producto_aux(productos, f);
-
-    fclose(f);
-}
-
 // recursivamente va bajando producto por producto
 void bajar_abb_producto_aux(abb_productos productos, FILE *f) {
     if (productos != NULL) {
@@ -129,27 +149,6 @@ void bajar_abb_producto_aux(abb_productos productos, FILE *f) {
         bajar_abb_producto_aux(productos->nodo_izquierda, f);
         bajar_abb_producto_aux(productos->nodo_derecha, f);
     }
-}
-
-// abre el archivo, obtiene todos los productos y luego lo cierra
-void levantar_abb_producto(abb_productos &productos, string nombreArchivo) {
-
-    string fullpath;
-    copiar_string(fullpath, PATH);
-    concatenar_string(fullpath, nombreArchivo);
-
-    FILE *f = fopen(fullpath, "rb");
-    producto buffer;
-    levantar_producto(buffer, f);
-
-    while (!feof(f))
-    {
-        abb_insertar_producto(productos, buffer);
-
-        levantar_producto(buffer, f);
-    }
-
-    fclose(f);
 }
 
 // dado un string y un FILE, guarda dicho string en el archivo dado
