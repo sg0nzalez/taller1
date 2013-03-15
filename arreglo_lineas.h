@@ -25,7 +25,6 @@ float importe_total_arreglo_lineas(arreglo_lineas lineas);
 // devuelve el iva de la factura
 float iva_arreglo_lineas(arreglo_lineas lineas);
 
-// AGREGAR AL DOC
 // devuelve el tope del arreglo
 int obtener_arreglo_lineas_tope(arreglo_lineas lineas);
 

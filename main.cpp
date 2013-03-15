@@ -503,11 +503,6 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
 
                     obtener_nombre_producto(producto_linea, nombre_producto);
 
-                    LEO ESTO COMENTALO EN TU CODIGO, ES PARA QUE LO ARREGLE EL PATOVA JAJAJA
-
-                    ARREGLAR QUE IMPRIMA DOS DECIMALES DESPUES DE LA COMA
-                    LA FORMA CORRECTA ES %.02f
-
                     printf("\n%-5i%-10i%-20s%-10i$%-10f$%-10f$%-10f\n",
                            obtener_cantidad_productos_linea(linea_actual),
                            obtener_codigo_producto_linea(linea_actual),

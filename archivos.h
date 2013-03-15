@@ -6,7 +6,7 @@
 #include "abb_clientes.h"
 #include "arreglo_lineas.h"
 
-const string PATH = "/home/santi/Desktop/";
+const string PATH = "C:\\Documents and Settings\\java\\Escritorio\\";
 
 // devuelve true si nombre_archivo termina en .dat
 boolean validar_nombre_archivo(string nombre_archivo);

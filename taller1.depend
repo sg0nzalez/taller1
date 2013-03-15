@@ -1,13 +1,11 @@
 # depslib dependency file v1.0
-1363302678 source:/home/santi/workspace/taller1/arreglo_string.cpp
+1363309789 source:/home/santi/workspace/taller1/arreglo_string.cpp
 	"arreglo_string.h"
 
-1363301949 /home/santi/workspace/taller1/arreglo_string.h
+1363309789 /home/santi/workspace/taller1/arreglo_string.h
 	"string.h"
 
-1363062460 /home/santi/workspace/taller1/string.h
-	"boolean.h"
-	"boolean.h"
+1363322614 /home/santi/workspace/taller1/string.h
 	"boolean.h"
 
 1354230810 /home/santi/workspace/taller1/boolean.h
@@ -38,7 +36,7 @@
 	"boolean.h"
 	"boolean.h"
 
-1363308673 source:/home/santi/workspace/taller1/main.cpp
+1363316898 source:/home/santi/workspace/taller1/main.cpp
 	<cstdlib>
 	"parser.h"
 	"archivos.h"
@@ -552,7 +550,7 @@
 1363147518 source:/home/santi/workspace/taller1/arreglo_lineas.cpp
 	"arreglo_lineas.h"
 
-1363147518 /home/santi/workspace/taller1/arreglo_lineas.h
+1363322614 /home/santi/workspace/taller1/arreglo_lineas.h
 	"linea.h"
 
 1362850477 source:/home/santi/workspace/taller1/cliente.cpp
@@ -583,10 +581,10 @@
 	"arreglo_string.h"
 	"arreglo_string.h"
 
-1363308316 source:/home/santi/workspace/taller1/factura.cpp
+1363309789 source:/home/santi/workspace/taller1/factura.cpp
 	"factura.h"
 
-1363308313 /home/santi/workspace/taller1/factura.h
+1363322614 /home/santi/workspace/taller1/factura.h
 	"arreglo_lineas.h"
 
 1363145846 source:/home/santi/workspace/taller1/comando.cpp
@@ -600,7 +598,7 @@
 	"arreglo_string.h"
 	"arreglo_string.h"
 
-1363307258 /home/santi/workspace/taller1/parser.h
+1363309789 /home/santi/workspace/taller1/parser.h
 	"comando.h"
 	"error.h"
 
@@ -654,8 +652,7 @@
 	"abb_clientes.h"
 	"arreglo_lineas.h"
 
-1363145846 /home/santi/workspace/taller1/lista_facturas.h
-	"factura.h"
+1363322614 /home/santi/workspace/taller1/lista_facturas.h
 	"factura.h"
 
 1363053476 /home/santi/workspace/taller1/abb_productos.h
@@ -669,21 +666,13 @@
 	"producto.h"
 	"producto.h"
 
-1363306475 /home/santi/workspace/taller1/producto.h
+1363309789 /home/santi/workspace/taller1/producto.h
 	"arreglo_string.h"
 
-1363053476 /home/santi/workspace/taller1/abb_clientes.h
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
+1363322614 /home/santi/workspace/taller1/abb_clientes.h
 	"cliente.h"
 
-1363306535 source:/home/santi/workspace/taller1/producto.cpp
+1363309789 source:/home/santi/workspace/taller1/producto.cpp
 	"producto.h"
 
 1362853064 source:/home/santi/workspace/taller1/test_cliente.cpp
@@ -694,7 +683,7 @@
 
 1361924760 source:/home/santi/workspace/taller1/test_producto.cpp
 
-1363307288 source:/home/santi/workspace/taller1/parser.cpp
+1363309789 source:/home/santi/workspace/taller1/parser.cpp
 	<cstdlib>
 	"parser.h"
 
