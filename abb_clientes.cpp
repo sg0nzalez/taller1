@@ -44,6 +44,27 @@ cliente abb_buscar_cliente(abb_clientes clientes, long int cedula_cliente){
     }
 }
 
+void listar_clientes(abb_clientes clientes) {
+    if (clientes != NULL) {
+        listar_clientes(clientes->nodo_izquierda);
+
+        if (clientes->nodo_izquierda != NULL)
+            printf("\n");
+
+        printf("%li - ", obtener_cedula_cliente(clientes->cli));
+
+        string nombre_cliente;
+        obtener_nombre_cliente(clientes->cli, nombre_cliente);
+        desplegar_string(nombre_cliente);
+        destruir_string(nombre_cliente);
+
+        if (clientes->nodo_derecha != NULL)
+            printf("\n");
+
+        listar_clientes(clientes->nodo_derecha);
+    }
+}
+
 // Devuelve true si el abb clientes está vacío
 boolean abb_cliente_es_vacio(abb_clientes clientes){
 

@@ -11,7 +11,6 @@ typedef struct nodo_cliente {
 
 typedef nodo_abb_clientes *abb_clientes;
 
-
 // crea el abb
 void crear_abb_clientes(abb_clientes &clientes);
 
@@ -24,6 +23,9 @@ void abb_insertar_cliente(abb_clientes &clientes, cliente cli);
 //
 // busca un cliente en el abb y lo devuelve
 cliente abb_buscar_cliente(abb_clientes clientes, long int cedula_cliente);
+
+// imprime en pantalla todos los clientes del abb
+void listar_clientes(abb_clientes clientes);
 
 // Devuelve true si el abb clientes est‡ vac’o
 boolean abb_cliente_es_vacio(abb_clientes clientes);

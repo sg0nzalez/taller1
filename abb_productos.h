@@ -24,6 +24,9 @@ void abb_insertar_producto(abb_productos &productos, producto prod);
 // devuelve el producto con el codigo dado si existe alguno
 producto abb_buscar_producto(abb_productos productos, int codigo);
 
+// imprime en pantalla todos los productos del abb
+void listar_productos(abb_productos productos);
+
 // devuelve true si el abb de productos es vacio
 boolean abb_producto_es_vacio(abb_productos productos);
 

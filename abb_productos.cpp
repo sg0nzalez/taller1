@@ -48,18 +48,32 @@ void abb_insertar_producto(abb_productos &productos, producto prod) {
    }
 }
 
+void listar_productos(abb_productos productos) {
+    if (productos != NULL) {
+        listar_productos(productos->nodo_izquierda);
 
+        if (productos->nodo_izquierda != NULL)
+            printf("\n");
 
+        printf("%li - ", obtener_codigo_producto(productos->prod));
+
+        string nombre_producto;
+        obtener_nombre_producto(productos->prod, nombre_producto);
+        desplegar_string(nombre_producto);
+        destruir_string(nombre_producto);
+
+        if (productos->nodo_derecha != NULL)
+            printf("\n");
+
+        listar_productos(productos->nodo_derecha);
+    }
+}
 
 // devuelve true si el abb de productos es vacio
 boolean abb_producto_es_vacio(abb_productos productos)
 {
     return (boolean)(productos == NULL);
 }
-
-
-
-
 
 // devuelve true si hay algun producto con el codigo dado
 boolean abb_existe_codigo(abb_productos productos, int codigo)
@@ -87,29 +101,3 @@ boolean abb_existe_codigo(abb_productos productos, int codigo)
         return FALSE;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,16 +1,10 @@
 #include <cstdlib>
 
-#include "parser.h"
 #include "archivos.h"
-#include "lista_facturas.h"
-#include "arreglo_lineas.h"
-#include "abb_clientes.h"
-#include "abb_productos.h"
+#include "parser.h"
 
 void crear_cliente(arreglo_string params, abb_clientes &clientes, error &err);
 void crear_producto(arreglo_string params, abb_productos &productos, error &err);
-void listar_clientes(abb_clientes clientes);
-void listar_productos(abb_productos productos);
 void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err);
 void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, abb_productos productos, error &err);
 void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_productos productos, abb_clientes clientes, error &err);
@@ -312,48 +306,6 @@ void crear_producto(arreglo_string params, abb_productos &productos, error &err)
     }
 }
 
-void listar_clientes(abb_clientes clientes) {
-    if (clientes != NULL) {
-        listar_clientes(clientes->nodo_izquierda);
-
-        if (clientes->nodo_izquierda != NULL)
-            printf("\n");
-
-        printf("%i - ", obtener_cedula_cliente(clientes->cli));
-
-        string nombre_cliente;
-        obtener_nombre_cliente(clientes->cli, nombre_cliente);
-        desplegar_string(nombre_cliente);
-        destruir_string(nombre_cliente);
-
-        if (clientes->nodo_derecha != NULL)
-            printf("\n");
-
-        listar_clientes(clientes->nodo_derecha);
-    }
-}
-
-void listar_productos(abb_productos productos) {
-    if (productos != NULL) {
-        listar_productos(productos->nodo_izquierda);
-
-        if (productos->nodo_izquierda != NULL)
-            printf("\n");
-
-        printf("%i - ", obtener_codigo_producto(productos->prod));
-
-        string nombre_producto;
-        obtener_nombre_producto(productos->prod, nombre_producto);
-        desplegar_string(nombre_producto);
-        destruir_string(nombre_producto);
-
-        if (productos->nodo_derecha != NULL)
-            printf("\n");
-
-        listar_productos(productos->nodo_derecha);
-    }
-}
-
 void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err) {
 
     string cedula_cli;
@@ -503,12 +455,7 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
 
                     obtener_nombre_producto(producto_linea, nombre_producto);
 
-                    LEO ESTO COMENTALO EN TU CODIGO, ES PARA QUE LO ARREGLE EL PATOVA JAJAJA
-
-                    ARREGLAR QUE IMPRIMA DOS DECIMALES DESPUES DE LA COMA
-                    LA FORMA CORRECTA ES %.02f
-
-                    printf("\n%-5i%-10i%-20s%-10i$%-10f$%-10f$%-10f\n",
+                    printf("\n%-5i%-10i%-20s%-10i$%-10%.02f$%-10%.02f$%-10%.02f\n",
                            obtener_cantidad_productos_linea(linea_actual),
                            obtener_codigo_producto_linea(linea_actual),
                            nombre_producto,
@@ -574,10 +521,11 @@ void guardar_archivo(arreglo_string params, abb_clientes clientes, abb_productos
     } else {
         err = ERROR_DE_SINTAXIS;
     }
+
+    destruir_string(nombre_archivo);
 }
 
 void cargar_archivo(arreglo_string params, abb_clientes &clientes, abb_productos &productos, error &err) {
-
     string nombre_archivo;
     obtener_string_arreglo(params, 1, nombre_archivo);
 
@@ -597,4 +545,6 @@ void cargar_archivo(arreglo_string params, abb_clientes &clientes, abb_productos
     } else {
         err = ERROR_DE_SINTAXIS;
     }
+
+    destruir_string(nombre_archivo);
 }

@@ -796,22 +796,10 @@
 
 1362933394 source:/home/santi/workspace/taller1/test_lista_facturas.cpp
 
-1363051968 source:\\psf\home\documents\projects\cprojects\taller1\abb_clientes.cpp
-	"abb_clientes.h"
-	"abb_clientes.h"
-	"abb_clientes.h"
-	"abb_clientes.h"
-	"abb_clientes.h"
-	"abb_clientes.h"
-	"abb_clientes.h"
-	"abb_clientes.h"
+1363316689 source:\\psf\home\documents\projects\cprojects\taller1\abb_clientes.cpp
 	"abb_clientes.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\abb_clientes.h
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
-	"cliente.h"
+1363316281 \\psf\home\documents\projects\cprojects\taller1\abb_clientes.h
 	"cliente.h"
 
 1362518345 \\psf\home\documents\projects\cprojects\taller1\cliente.h
@@ -825,18 +813,10 @@
 	"arreglo_string.h"
 	"arreglo_string.h"
 
-1363051215 \\psf\home\documents\projects\cprojects\taller1\arreglo_string.h
-	"string.h"
-	"string.h"
-	"string.h"
-	"string.h"
+1363315822 \\psf\home\documents\projects\cprojects\taller1\arreglo_string.h
 	"string.h"
 
-1361787873 \\psf\home\documents\projects\cprojects\taller1\string.h
-	"boolean.h"
-	"boolean.h"
-	"boolean.h"
-	"boolean.h"
+1363131162 \\psf\home\documents\projects\cprojects\taller1\string.h
 	"boolean.h"
 
 1361565626 \\psf\home\documents\projects\cprojects\taller1\boolean.h
@@ -850,102 +830,40 @@
 	<stdio.h>
 	<stdio.h>
 
-1363052472 source:\\psf\home\documents\projects\cprojects\taller1\abb_productos.cpp
-	"abb_productos.h"
-	"abb_productos.h"
-	"abb_productos.h"
-	"abb_productos.h"
+1363316703 source:\\psf\home\documents\projects\cprojects\taller1\abb_productos.cpp
 	"abb_productos.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\abb_productos.h
-	"producto.h"
-	"producto.h"
-	"producto.h"
-	"producto.h"
+1363316301 \\psf\home\documents\projects\cprojects\taller1\abb_productos.h
 	"producto.h"
 
-1361844876 \\psf\home\documents\projects\cprojects\taller1\producto.h
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
+1363315823 \\psf\home\documents\projects\cprojects\taller1\producto.h
 	"arreglo_string.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\archivos.cpp
-	"archivos.h"
-	"archivos.h"
-	"archivos.h"
-	"archivos.h"
+1363315822 source:\\psf\home\documents\projects\cprojects\taller1\archivos.cpp
 	"archivos.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\archivos.h
-	"lista_facturas.h"
-	"abb_productos.h"
-	"abb_clientes.h"
-	"arreglo_lineas.h"
-	"lista_facturas.h"
-	"abb_productos.h"
-	"abb_clientes.h"
-	"arreglo_lineas.h"
-	"lista_facturas.h"
-	"abb_productos.h"
-	"abb_clientes.h"
-	"arreglo_lineas.h"
-	"lista_facturas.h"
-	"abb_productos.h"
-	"abb_clientes.h"
-	"arreglo_lineas.h"
+1363317536 \\psf\home\documents\projects\cprojects\taller1\archivos.h
 	"lista_facturas.h"
 	"abb_productos.h"
 	"abb_clientes.h"
 	"arreglo_lineas.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\lista_facturas.h
-	"factura.h"
-	"factura.h"
-	"factura.h"
-	"factura.h"
+1363143583 \\psf\home\documents\projects\cprojects\taller1\lista_facturas.h
 	"factura.h"
 
-1361913593 \\psf\home\documents\projects\cprojects\taller1\factura.h
-	"arreglo_lineas.h"
-	"arreglo_lineas.h"
-	"arreglo_lineas.h"
-	"arreglo_lineas.h"
+1363315823 \\psf\home\documents\projects\cprojects\taller1\factura.h
 	"arreglo_lineas.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.h
-	"linea.h"
-	"linea.h"
-	"linea.h"
-	"linea.h"
+1363146004 \\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.h
 	"linea.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\linea.h
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
+1363145921 \\psf\home\documents\projects\cprojects\taller1\linea.h
 	"arreglo_string.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.cpp
-	"arreglo_lineas.h"
-	"arreglo_lineas.h"
-	"arreglo_lineas.h"
-	"arreglo_lineas.h"
+1363145996 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_lineas.cpp
 	"arreglo_lineas.h"
 
-1363051222 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_string.cpp
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
+1363315822 source:\\psf\home\documents\projects\cprojects\taller1\arreglo_string.cpp
 	"arreglo_string.h"
 
 1361565626 source:\\psf\home\documents\projects\cprojects\taller1\boolean.cpp
@@ -981,84 +899,33 @@
 	"error.h"
 	"error.h"
 
-1361912104 \\psf\home\documents\projects\cprojects\taller1\error.h
+1363315822 \\psf\home\documents\projects\cprojects\taller1\error.h
 
-1361914337 source:\\psf\home\documents\projects\cprojects\taller1\factura.cpp
-	"factura.h"
-	"factura.h"
-	"factura.h"
-	"factura.h"
+1363315823 source:\\psf\home\documents\projects\cprojects\taller1\factura.cpp
 	"factura.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\linea.cpp
-	"linea.h"
-	"boolean.h"
-	"linea.h"
-	"boolean.h"
-	"linea.h"
-	"boolean.h"
-	"linea.h"
-	"boolean.h"
+1363145913 source:\\psf\home\documents\projects\cprojects\taller1\linea.cpp
 	"linea.h"
 	"boolean.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\lista_facturas.cpp
-	"lista_facturas.h"
-	"lista_facturas.h"
-	"lista_facturas.h"
-	"lista_facturas.h"
+1363143565 source:\\psf\home\documents\projects\cprojects\taller1\lista_facturas.cpp
 	"lista_facturas.h"
 
-1363051744 source:\\psf\home\documents\projects\cprojects\taller1\parser.cpp
-	"parser.h"
-	"parser.h"
-	"parser.h"
-	"parser.h"
+1363315823 source:\\psf\home\documents\projects\cprojects\taller1\parser.cpp
+	<cstdlib>
 	"parser.h"
 
-1363048822 \\psf\home\documents\projects\cprojects\taller1\parser.h
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
-	"comando.h"
-	"error.h"
+1363315823 \\psf\home\documents\projects\cprojects\taller1\parser.h
 	"comando.h"
 	"error.h"
 
-1363049885 \\psf\home\documents\projects\cprojects\taller1\comando.h
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
-	"arreglo_string.h"
+1363143680 \\psf\home\documents\projects\cprojects\taller1\comando.h
 	"arreglo_string.h"
 
-1361918968 source:\\psf\home\documents\projects\cprojects\taller1\producto.cpp
-	"producto.h"
-	"producto.h"
-	"producto.h"
-	"producto.h"
-	"producto.h"
-	"producto.h"
-	"producto.h"
-	"producto.h"
+1363315823 source:\\psf\home\documents\projects\cprojects\taller1\producto.cpp
 	"producto.h"
 
-1363048822 source:\\psf\home\documents\projects\cprojects\taller1\string.cpp
-	"string.h"
-	"string.h"
-	"string.h"
-	"string.h"
+1363131162 source:\\psf\home\documents\projects\cprojects\taller1\string.cpp
 	"string.h"
 
 1363048822 source:\\psf\home\documents\projects\cprojects\taller1\test_abb_clientes.cpp
@@ -1083,32 +950,141 @@
 
 1361911100 source:\\psf\home\documents\projects\cprojects\taller1\test_producto.cpp
 
-1361844160 source:\\psf\home\documents\projects\cprojects\taller1\test_string.cpp
+1363131162 source:\\psf\home\documents\projects\cprojects\taller1\test_string.cpp
 
-1363049885 source:\\psf\home\documents\projects\cprojects\taller1\comando.cpp
-	"comando.h"
-	"comando.h"
-	"comando.h"
-	"comando.h"
+1363144585 source:\\psf\home\documents\projects\cprojects\taller1\comando.cpp
 	"comando.h"
 
 1363049885 ependency file v1.0
 
-1363142222 source:\\psf\home\documents\projects\cprojects\taller1\main.cpp
+1363316950 source:\\psf\home\documents\projects\cprojects\taller1\main.cpp
 	<cstdlib>
-	"parser.h"
 	"archivos.h"
-	"lista_facturas.h"
-	"arreglo_lineas.h"
-	"abb_clientes.h"
-	"abb_productos.h"
-	<cstdlib>
 	"parser.h"
-	"archivos.h"
-	"lista_facturas.h"
-	"arreglo_lineas.h"
-	"abb_clientes.h"
-	"abb_productos.h"
 
 1363233408 source:/home/santi/workspace/taller1/test_archivos.cpp
+
+1363316689 source:z:\documents\projects\cprojects\taller1\abb_clientes.cpp
+	"abb_clientes.h"
+
+1363316281 z:\documents\projects\cprojects\taller1\abb_clientes.h
+	"cliente.h"
+
+1362518345 z:\documents\projects\cprojects\taller1\cliente.h
+	"arreglo_string.h"
+
+1363315822 z:\documents\projects\cprojects\taller1\arreglo_string.h
+	"string.h"
+
+1363131162 z:\documents\projects\cprojects\taller1\string.h
+	"boolean.h"
+
+1361565626 z:\documents\projects\cprojects\taller1\boolean.h
+	<stdio.h>
+
+1363316703 source:z:\documents\projects\cprojects\taller1\abb_productos.cpp
+	"abb_productos.h"
+
+1363316301 z:\documents\projects\cprojects\taller1\abb_productos.h
+	"producto.h"
+
+1363315823 z:\documents\projects\cprojects\taller1\producto.h
+	"arreglo_string.h"
+
+1363315822 source:z:\documents\projects\cprojects\taller1\archivos.cpp
+	"archivos.h"
+
+1363320799 z:\documents\projects\cprojects\taller1\archivos.h
+	"lista_facturas.h"
+	"abb_productos.h"
+	"abb_clientes.h"
+	"arreglo_lineas.h"
+
+1363143583 z:\documents\projects\cprojects\taller1\lista_facturas.h
+	"factura.h"
+
+1363315823 z:\documents\projects\cprojects\taller1\factura.h
+	"arreglo_lineas.h"
+
+1363146004 z:\documents\projects\cprojects\taller1\arreglo_lineas.h
+	"linea.h"
+
+1363145921 z:\documents\projects\cprojects\taller1\linea.h
+	"arreglo_string.h"
+
+1363145996 source:z:\documents\projects\cprojects\taller1\arreglo_lineas.cpp
+	"arreglo_lineas.h"
+
+1363315822 source:z:\documents\projects\cprojects\taller1\arreglo_string.cpp
+	"arreglo_string.h"
+
+1361565626 source:z:\documents\projects\cprojects\taller1\boolean.cpp
+	"boolean.h"
+
+1362518345 source:z:\documents\projects\cprojects\taller1\cliente.cpp
+	"cliente.h"
+
+1363144585 source:z:\documents\projects\cprojects\taller1\comando.cpp
+	"comando.h"
+
+1363143680 z:\documents\projects\cprojects\taller1\comando.h
+	"arreglo_string.h"
+
+1361912128 source:z:\documents\projects\cprojects\taller1\error.cpp
+	"error.h"
+
+1363315822 z:\documents\projects\cprojects\taller1\error.h
+
+1363315823 source:z:\documents\projects\cprojects\taller1\factura.cpp
+	"factura.h"
+
+1363145913 source:z:\documents\projects\cprojects\taller1\linea.cpp
+	"linea.h"
+	"boolean.h"
+
+1363143565 source:z:\documents\projects\cprojects\taller1\lista_facturas.cpp
+	"lista_facturas.h"
+
+1363316950 source:z:\documents\projects\cprojects\taller1\main.cpp
+	<cstdlib>
+	"archivos.h"
+	"parser.h"
+
+1363315823 z:\documents\projects\cprojects\taller1\parser.h
+	"comando.h"
+	"error.h"
+
+1363315823 source:z:\documents\projects\cprojects\taller1\parser.cpp
+	<cstdlib>
+	"parser.h"
+
+1363315823 source:z:\documents\projects\cprojects\taller1\producto.cpp
+	"producto.h"
+
+1363131162 source:z:\documents\projects\cprojects\taller1\string.cpp
+	"string.h"
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_abb_clientes.cpp
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_abb_productos.cpp
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_arreglo_lineas.cpp
+
+1361913812 source:z:\documents\projects\cprojects\taller1\test_arreglo_string.cpp
+
+1361842539 source:z:\documents\projects\cprojects\taller1\test_boolean.cpp
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_cliente.cpp
+
+1361911805 source:z:\documents\projects\cprojects\taller1\test_errores.cpp
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_factura.cpp
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_linea.cpp
+
+1363048822 source:z:\documents\projects\cprojects\taller1\test_lista_facturas.cpp
+
+1361911100 source:z:\documents\projects\cprojects\taller1\test_producto.cpp
+
+1363131162 source:z:\documents\projects\cprojects\taller1\test_string.cpp
 
