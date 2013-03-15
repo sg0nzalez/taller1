@@ -26,6 +26,8 @@ void crear_arreglo_string(arreglo_string &arr_string);
 // borra todos los strings guardados dependendiendo del tope que tenga
 void borrar_arreglo_string(arreglo_string &arr_string);
 
+void obtener_string_arreglo(arreglo_string arr_string, int pos, string &string_obtenido);
+
 // dado un string, lo divide en un arreglo de strings por cada espacio en blanco
 void separar_por_espacio(string texto, arreglo_string &parametros);
 

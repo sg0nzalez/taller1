@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "parser.h"
 
 void parsear_comando(string comando_string, arreglo_string &arr_params, comando &com, error &err) {
@@ -85,4 +86,8 @@ void obtener_comando(string comando_string, comando &com, error &err) {
     } else {
         err = COMANDO_INVALIDO;
     }
+}
+
+int convertir_string_a_entero(string str) {
+    return atoi(str);
 }

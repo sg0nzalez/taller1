@@ -24,4 +24,7 @@ boolean validar_formato_entero(string string_a_chequear);
 // dado un string determina que comando fue dado o asigna un error
 void obtener_comando(string comando_string, comando &com, error &err);
 
+// convierte un string a entero y lo devuelve
+int convertir_string_a_entero(string str);
+
 #endif // PARSER_H_INCLUDED

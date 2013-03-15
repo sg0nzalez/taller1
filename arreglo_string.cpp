@@ -10,6 +10,11 @@ void borrar_arreglo_string(arreglo_string &arr_string) {
     }
 }
 
+void obtener_string_arreglo(arreglo_string arr_string, int pos, string &string_obtenido){
+    crear_string(string_obtenido);
+    copiar_string(string_obtenido, arr_string.arre[pos]);
+}
+
 void separar_por_espacio(string texto, arreglo_string &parametros) {
     string aux = new char[MAX];
     int i = 0;
