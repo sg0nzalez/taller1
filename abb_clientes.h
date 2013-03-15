@@ -27,7 +27,7 @@ cliente abb_buscar_cliente(abb_clientes clientes, long int cedula_cliente);
 // imprime en pantalla todos los clientes del abb
 void listar_clientes(abb_clientes clientes);
 
-// Devuelve true si el abb clientes está vacío
+// Devuelve true si el abb clientes esta vacio
 boolean abb_cliente_es_vacio(abb_clientes clientes);
 
 // devuelve true si la cédula dada existe

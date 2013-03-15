@@ -10,6 +10,7 @@ typedef struct {
     arreglo_lineas lineas_factura;
 } factura;
 
+// agrega una linea al arreglo
 void agregar_linea_al_arreglo(factura fac, linea lin);
 
 // devuelve el numero de factura

@@ -10,9 +10,10 @@ typedef struct nodo_siguiente_factura {
 
 typedef nodo_factura *lista_facturas;
 
-// devuelve true si el c˜digo dado ya esta ingresado en la lista de facturas
+// devuelve true si el codigo dado ya esta ingresado en la lista de facturas
 boolean existe_numero_factura(lista_facturas facturas, int numFactura);
 
+// modifica la factura dada en la lista de facturas
 void modificar_factura(lista_facturas &lista_fact, factura factura_modificada);
 
 // precondicion: existe la factura

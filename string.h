@@ -32,6 +32,7 @@ int largo_string(string s);
 // comparar dos strings si son iguales
 boolean comparar_2_strings(string s1, string s2);
 
+// concatena el segundo string al primero
 void concatenar_string(string &s1, string s2);
 
 #endif // STRING_H_INCLUDED
