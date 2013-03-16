@@ -373,9 +373,11 @@ void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factu
                             if (obtener_estado_factura(factura_asociada) == TRUE) {
                                 linea nueva_linea;
 
-                                nueva_linea.cant_productos = cantidad_productos;
-                                nueva_linea.codigo_producto = numero_producto;
-                                nueva_linea.precio_unitario = precio_producto;
+                                modificar_codigo_producto_linea(nueva_linea, numero_producto);
+
+                                modificar_cantidad_productos_linea(nueva_linea, cantidad_productos);
+
+                                modificar_precio_unitario_linea(nueva_linea, precio_producto);
 
                                 agregar_linea_al_arreglo(lineas, nueva_linea);
                                 modificar_arreglo_lineas_factura(factura_asociada, lineas);
@@ -485,7 +487,8 @@ void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura 
 
             if (existe_numero_factura(facturas, numero_factura) == TRUE) {
                 factura_asociada = obtener_factura(facturas, numero_factura);
-                factura_asociada.estado_pendiente = FALSE;
+
+                modificar_estado_factura(factura_asociada, FALSE);
 
                 modificar_factura(facturas, factura_asociada);
             } else {

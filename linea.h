@@ -26,6 +26,15 @@ int obtener_cantidad_productos_linea(linea lin);
 // devuelve el precio unitario asociado a la linea dada
 int obtener_precio_unitario_linea(linea lin);
 
+// devuelve el codigo del producto asociado a la linea dada
+void modificar_codigo_producto_linea(linea &lin, int codigo);
+
+// devuelve la cantidad de productos asociados a la linea dada
+void modificar_cantidad_productos_linea(linea &lin, int cantidad);
+
+// devuelve el precio unitario asociado a la linea dada
+void modificar_precio_unitario_linea(linea &lin, int precio);
+
 // devuelve la multiplicación entre precio unitario y cantidad
 float importe_linea(linea lin);
 
