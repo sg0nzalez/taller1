@@ -243,14 +243,13 @@ int main() {
 //   [1] = cedula
 //   [2] = nombre cliente
 void crear_cliente(arreglo_string params, abb_clientes &clientes, error &err) {
-
-    string cedula;
-    string nombre;
-
-    obtener_string_arreglo(params, 1, cedula);
-    obtener_string_arreglo(params, 2, nombre);
-
     if (comparar_cant_params_por_comando(CREAR_CLIENTE, obtener_tope_arreglo_string(params)) == TRUE) {
+        string cedula;
+        string nombre;
+
+        obtener_string_arreglo(params, 1, cedula);
+        obtener_string_arreglo(params, 2, nombre);
+
         // validar cedula de tipo entero y nombre string valido
         if (validar_formato_entero(cedula) == TRUE &&
             validar_formato_string(nombre) == TRUE) {
@@ -277,14 +276,13 @@ void crear_cliente(arreglo_string params, abb_clientes &clientes, error &err) {
 //   [1] = codigo
 //   [2] = nombre producto
 void crear_producto(arreglo_string params, abb_productos &productos, error &err) {
-
-    string codigo;
-    string nombre;
-
-    obtener_string_arreglo(params, 1, codigo);
-    obtener_string_arreglo(params, 2, nombre);
-
     if (comparar_cant_params_por_comando(CREAR_PRODUCTO, obtener_tope_arreglo_string(params)) == TRUE) {
+        string codigo;
+        string nombre;
+
+        obtener_string_arreglo(params, 1, codigo);
+        obtener_string_arreglo(params, 2, nombre);
+
         if (validar_formato_entero(codigo) == TRUE &&
             validar_formato_string(nombre) == TRUE) {
             producto nuevo_producto;
@@ -307,12 +305,10 @@ void crear_producto(arreglo_string params, abb_productos &productos, error &err)
 }
 
 void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes clientes, factura &nueva_factura, error &err) {
-
-    string cedula_cli;
-
-    obtener_string_arreglo(params, 1, cedula_cli);
-
     if (comparar_cant_params_por_comando(CREAR_FACTURA, obtener_tope_arreglo_string(params)) == TRUE) {
+        string cedula_cli;
+        obtener_string_arreglo(params, 1, cedula_cli);
+
         if (validar_formato_entero(cedula_cli) == TRUE) {
             arreglo_lineas lineas;
             lineas.tope = 0;
@@ -343,19 +339,17 @@ void crear_factura(arreglo_string params, lista_facturas &facturas, abb_clientes
 //   [3] = cantidad producto
 //   [4] = precio unitario
 void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, abb_productos productos, error &err) {
-
-    string num_fact;
-    string num_prod;
-    string cant_prod;
-    string precio_prod;
-
-    obtener_string_arreglo(params, 1, num_fact);
-    obtener_string_arreglo(params, 2, num_prod);
-    obtener_string_arreglo(params, 3, cant_prod);
-    obtener_string_arreglo(params, 4, precio_prod);
-
-
     if (comparar_cant_params_por_comando(AGREGAR_LINEA, obtener_tope_arreglo_string(params)) == TRUE) {
+        string num_fact;
+        string num_prod;
+        string cant_prod;
+        string precio_prod;
+
+        obtener_string_arreglo(params, 1, num_fact);
+        obtener_string_arreglo(params, 2, num_prod);
+        obtener_string_arreglo(params, 3, cant_prod);
+        obtener_string_arreglo(params, 4, precio_prod);
+
         if (validar_formato_entero(num_fact) == TRUE &&
             validar_formato_entero(num_prod) == TRUE &&
             validar_formato_entero(cant_prod) == TRUE &&
@@ -411,11 +405,9 @@ void crear_linea(arreglo_string params, lista_facturas &facturas, factura &factu
 }
 
 void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_productos productos, abb_clientes clientes, error &err) {
-
-    string num_fact;
-    obtener_string_arreglo(params, 1, num_fact);
-
     if (comparar_cant_params_por_comando(DESPLEGAR_FACTURA, obtener_tope_arreglo_string(params)) == TRUE) {
+        string num_fact;
+        obtener_string_arreglo(params, 1, num_fact);
         if (validar_formato_entero(num_fact) == TRUE) {
             int numero_factura = convertir_string_a_entero(num_fact);
 
@@ -455,7 +447,7 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
 
                     obtener_nombre_producto(producto_linea, nombre_producto);
 
-                    printf("\n%-5i%-10i%-20s%-10i$%-10%.02f$%-10%.02f$%-10%.02f\n",
+                    printf("\n%-5i%-10i%-20s%-10i %-10 $%.02f %-10 $%.02f %-10 $%.02f\n",
                            obtener_cantidad_productos_linea(linea_actual),
                            obtener_codigo_producto_linea(linea_actual),
                            nombre_producto,
@@ -484,11 +476,10 @@ void desplegar_factura(arreglo_string params, lista_facturas facturas, abb_produ
 }
 
 void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura &factura_asociada, error &err) {
-
-    string num_fact;
-    obtener_string_arreglo(params, 1, num_fact);
-
     if (comparar_cant_params_por_comando(DESPLEGAR_FACTURA, obtener_tope_arreglo_string(params)) == TRUE) {
+        string num_fact;
+        obtener_string_arreglo(params, 1, num_fact);
+
         if (validar_formato_entero(num_fact) == TRUE) {
             int numero_factura = convertir_string_a_entero(num_fact);
 
@@ -509,27 +500,27 @@ void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura 
 }
 
 void guardar_archivo(arreglo_string params, abb_clientes clientes, abb_productos productos, error &err) {
-    string nombre_archivo;
-    obtener_string_arreglo(params, 1, nombre_archivo);
-
     if (comparar_cant_params_por_comando(SAVE, obtener_tope_arreglo_string(params)) == TRUE) {
+        string nombre_archivo;
+        obtener_string_arreglo(params, 1, nombre_archivo);
+
         if(validar_nombre_archivo(nombre_archivo) == TRUE) {
             bajar_abb(clientes, productos, nombre_archivo);
         } else {
             err = FORMATO_INCORRECTO;
         }
+
+        destruir_string(nombre_archivo);
     } else {
         err = ERROR_DE_SINTAXIS;
     }
-
-    destruir_string(nombre_archivo);
 }
 
 void cargar_archivo(arreglo_string params, abb_clientes &clientes, abb_productos &productos, error &err) {
-    string nombre_archivo;
-    obtener_string_arreglo(params, 1, nombre_archivo);
-
     if (comparar_cant_params_por_comando(LOAD, obtener_tope_arreglo_string(params)) == TRUE) {
+        string nombre_archivo;
+        obtener_string_arreglo(params, 1, nombre_archivo);
+
         if(validar_nombre_archivo(nombre_archivo) == TRUE) {
             if(existe_archivo(nombre_archivo) == TRUE) {
                 crear_abb_clientes(clientes);
@@ -542,9 +533,9 @@ void cargar_archivo(arreglo_string params, abb_clientes &clientes, abb_productos
         } else {
             err = FORMATO_INCORRECTO;
         }
+
+        destruir_string(nombre_archivo);
     } else {
         err = ERROR_DE_SINTAXIS;
     }
-
-    destruir_string(nombre_archivo);
 }
