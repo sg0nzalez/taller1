@@ -496,7 +496,8 @@ void confirmar_factura(arreglo_string params, lista_facturas &facturas, factura 
 
             if (existe_numero_factura(facturas, numero_factura) == TRUE) {
                 factura_asociada = obtener_factura(facturas, numero_factura);
-                factura_asociada.estado_pendiente = FALSE;
+
+                modificar_estado_factura(factura_asociada, FALSE);
 
                 modificar_factura(facturas, factura_asociada);
             } else {
